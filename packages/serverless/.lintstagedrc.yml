@@ -1,0 +1,6 @@
+linters:
+  package.json:
+    - npmPkgJsonLint
+  "{src,test}/**/*.ts":
+    - "prettier --write"
+    - "git add"
