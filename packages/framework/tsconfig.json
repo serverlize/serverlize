@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "lib": [
+      "es2015",
+      "es2016",
+      "es2017",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "target": "ES2015",
+    "typeRoots": [
+      "node_modules/@types",
+      "../../node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
