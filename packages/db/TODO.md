@@ -1,0 +1,11 @@
+- [X] Handle query pagination
+- [X] Add index support
+- [X] Use DynamoDB adapter
+  - [ ] Throw proper AWS errors for DDB client when appropriate 
+- [-] Add tests
+  - [ ] Add dynamodb-local for testing
+- [ ] Add logging
+- [ ] Make `Collection` proxy all methods from `collect`
+- [ ] Improve expression API
+- [ ] Add `aws-sdk` and `lodash` as peerDependencies
+- [ ] Use Rollup
