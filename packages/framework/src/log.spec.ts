@@ -1,11 +1,9 @@
-import * as winston from 'winston';
-
 import log from './log';
 
-describe("log", () => {
-
-  it("creates a logger", () => {
-
-    expect(log).toBeInstanceOf(winston.Logger);
+describe('log', () => {
+  it('creates a logger', () => {
+    expect(log).toHaveProperty('info');
+    expect(log).toHaveProperty('debug');
+    expect(log).toHaveProperty('warn');
   });
 });
