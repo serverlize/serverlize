@@ -30,7 +30,6 @@ const MODEL_OPTIONS = {
 };
 
 describe('Collection', () => {
-
   let model: typeof Model;
 
   beforeAll(() => {
@@ -38,7 +37,7 @@ describe('Collection', () => {
   });
 
   it('should automatically convert items to model instances', () => {
-    const collection = new Collection(model, [ { id: "foo", ownerId: "bar" } ]);
+    const collection = new Collection(model, [{ id: 'foo', ownerId: 'bar' }]);
 
     const allItems = collection.all();
     expect(allItems.length).toBe(1);
@@ -48,8 +47,13 @@ describe('Collection', () => {
   });
 
   it('should merge and convert new items to model instances', () => {
-    const oldCollection = new Collection(model, [ { id: "foo", ownerId: "bar" } ]);
-    const newCollection = oldCollection.merge([ { id: "bar", ownerId: "baz" } ], { lastKey: { id: "bar", ownerId: "baz" } });
+    const oldCollection = new Collection(model, [
+      { id: 'foo', ownerId: 'bar' },
+    ]);
+    const newCollection = oldCollection.merge([{ id: 'bar', ownerId: 'baz' }], {
+      lastKey: { id: 'bar', ownerId: 'baz' },
+      request: '{}',
+    });
 
     const allItems = newCollection.all();
     expect(allItems.length).toBe(2);
@@ -57,5 +61,4 @@ describe('Collection', () => {
       expect(item).toBeInstanceOf(model);
     });
   });
-
 });
