@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/db/package.json",
+        "packages/framework/package.json",
+        "packages/lambda/package.json",
+        "packages/serverless/package.json"
+      ]
+    }
+  }
+}
