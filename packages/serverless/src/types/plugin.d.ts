@@ -23,10 +23,10 @@ declare interface Options {
 /**
  * Merged with empty default Serverless.Service.Custom declaration
  */
-declare namespace Serverless {
-  namespace Service {
-    interface Custom {
-      capacities: Capacity[];
-    }
-  }
-}
+// declare namespace Serverless {
+//   namespace Service {
+//     interface Custom {
+//       capacities: Capacity[];
+//     }
+//   }
+// }

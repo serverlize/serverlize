@@ -1,15 +1,16 @@
 import middy from '@middy/core';
 
-import { EnhancedHandler, Handler, LambdaMiddleware } from './types';
-
-export * from './types';
+import { Serverlize } from './types';
 
 export function enhance(
-  handler: Handler,
-  middlewareToApply: LambdaMiddleware[] = []
+  handler: Serverlize.Lambda.Handler,
+  middlewareToApply: Serverlize.Lambda.Middleware[] = []
 ) {
   return middlewareToApply.reduce(
-    (enhancedHandler: EnhancedHandler, middleware: LambdaMiddleware) => {
+    (
+      enhancedHandler: Serverlize.Lambda.EnhancedHandler,
+      middleware: Serverlize.Lambda.Middleware
+    ) => {
       return enhancedHandler.use(middleware);
     },
     middy(handler)

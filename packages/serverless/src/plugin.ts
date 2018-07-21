@@ -1,21 +1,21 @@
-import Serverless from './types/serverless';
-
 // https://gist.github.com/HyperBrain/50d38027a8f57778d5b0f135d80ea406
 
-export default class ServerlizePlugin extends Serverless.Plugin<Options> {
+export default class ServerlizePlugin {
   /**
    * A list of all loaded extensions for the plugin
    */
-  private static readonly extensions: Serverless.PluginExtension[];
+  private static readonly extensions: any[];
+
+  public commands: { [key: string]: Serverless.CliCommand } = {};
+  public hooks: { [key: string]: Serverless.Hook } = {};
 
   /**
    * Constructor
    */
-  constructor(serverless: Serverless, options: Options) {
-    super(serverless, options);
-    this.serverless = serverless;
-    this.options = options;
-
+  constructor(
+    private serverless: Serverless,
+    private options?: Serverless.Options
+  ) {
     this.commands = {};
     this.hooks = {
       'before:package:compileEvents': this.compileEvents,

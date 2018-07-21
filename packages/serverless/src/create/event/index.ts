@@ -1,5 +1,3 @@
-import Serverless from '../../types/serverless';
-
 export interface Options extends Serverless.Options {
   [key: string]: any;
 
