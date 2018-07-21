@@ -1,7 +1,6 @@
-import { ExternalError } from './index';
+import ExternalError from './ExternalError';
 
-describe("ExternalError", () => {
-
+describe('ExternalError', () => {
   it('has the correct attributes', () => {
     const error = new ExternalError('This is an error!');
 
@@ -10,6 +9,6 @@ describe("ExternalError", () => {
       reason: 'This is an error!',
       statusCode: 500,
       type: 'ExternalError',
-    })
+    });
   });
 });
