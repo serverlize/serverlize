@@ -4799,10 +4799,6 @@ semver-compare@^1.0.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
-serverless-types@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/serverless-types/-/serverless-types-0.0.1.tgz#aaed7c5aa355bf9a58c999372b537e8037f1fa77"
-
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
