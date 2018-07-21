@@ -25,6 +25,7 @@
     "commitmsg": "commitlint -E GIT_PARAMS",
     "commit": "$(yarn bin)/git-cz",
     "lint": "lerna run --concurrency 1 --stream lint",
+    "build": "lerna run --concurrency 1 --stream build",
     "test": "lerna run --concurrency 1 --stream test"
   },
   "devDependencies": {
