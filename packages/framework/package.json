@@ -24,9 +24,10 @@
   },
   "scripts": {
     "precommit": "$(yarn bin)/lint-staged",
-    "lint": "tslint {src,test}/**/*.ts",
+    "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc",
+    "build": "tsc --module commonjs && rollup -c && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "start": "rollup -c -w",
     "test": "jest",
     "test:prod": "yarn lint && yarn test --coverage --no-cache"
   },

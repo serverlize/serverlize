@@ -29,8 +29,8 @@
     "precommit": "$(yarn bin)/lint-staged",
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "rollup -c rollup.config.ts -w",
+    "build": "tsc --module commonjs && rollup -c && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "start": "rollup -c -w",
     "test": "jest",
     "test:prod": "yarn lint && yarn test --coverage --no-cache"
   },
