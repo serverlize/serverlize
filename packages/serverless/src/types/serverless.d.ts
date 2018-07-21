@@ -173,5 +173,3 @@ declare class Serverless {
   service: Serverless.Service;
   version: string;
 }
-
-export default Serverless;
