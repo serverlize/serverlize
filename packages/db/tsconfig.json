@@ -1,34 +1,12 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "es2017",
-      "esnext.asynciterable"
-    ],
-    "module":"commonjs",
-    "moduleResolution": "node",
-    "outDir": "dist/lib",
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types",
-      "../../node_modules/@types"
-    ]
-  },
+  "extends": "../../tsconfig.json",
   "include": [
     "src"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "plugins": [
+    { "name": "typescript-workspace-plugin" }
   ]
 }
