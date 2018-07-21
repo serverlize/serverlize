@@ -2,11 +2,5 @@
   "extends": "../../tsconfig.json",
   "include": [
     "src"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "plugins": [
-    { "name": "typescript-workspace-plugin" }
   ]
 }

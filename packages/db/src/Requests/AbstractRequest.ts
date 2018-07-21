@@ -1,5 +1,6 @@
 import * as DynamoDB from 'aws-sdk/clients/dynamodb';
-import { find, isArray } from 'lodash';
+import find from 'lodash.find';
+import isArray from 'lodash.isarray';
 
 import AbstractExpression from '../Expressions/AbstractExpression';
 import Model from '../Model';

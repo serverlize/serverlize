@@ -1,5 +1,6 @@
 import * as DynamoDB from 'aws-sdk/clients/dynamodb';
-import { find, pick } from 'lodash';
+import find from 'lodash.find';
+import pick from 'lodash.pick';
 
 import AdapterInterface from './Adapters/AdapterInterface';
 import DynamoDBAdapter from './Adapters/DynamoDB';
