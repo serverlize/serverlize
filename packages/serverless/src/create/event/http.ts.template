@@ -1,0 +1,11 @@
+import urlEncodeBodyParser from '@middy/http-urlencode-body-parser';
+import httpErrorHandler from '@middy/http-error-handler';
+import enhance, { Serverlize } from '@serverlize/lambda';
+
+const middleware = [ urlEncodeBodyParser(), httpErrorHandler() ];
+
+const handler: Serverlize.Lambda.DynamoDBStreamHandler = async (event, context) => {
+  // Your code
+};
+
+export default enhance(handler, middleware);
