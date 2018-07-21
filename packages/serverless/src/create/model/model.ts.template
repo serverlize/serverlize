@@ -1,0 +1,29 @@
+import DB from '@serverlize/db';
+
+const modelOptions = {
+  name: '<%= name %>',
+  throughput: '<%= throughput %>',
+
+  attributes: [
+    {
+      name: '<%= hashKey %>',
+      type: String,
+      hashKey: true,
+    },
+    {
+      name: '<%= rangeKey %>',
+      type: String,
+      rangeKey: true,
+    },
+  ],
+};
+
+interface PetKey {
+  '<%= hashKey %>': string;
+  '<%= rangeKey %>': string;
+}
+
+interface Pet extends PetKey {
+}
+
+export default DB.createModel<Pet, PetKey>(modelOptions);
