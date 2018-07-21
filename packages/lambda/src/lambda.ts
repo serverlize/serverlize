@@ -2,6 +2,8 @@ import middy from '@middy/core';
 
 import { EnhancedHandler, Handler, LambdaMiddleware } from './types';
 
+export * from './types';
+
 export function enhance(
   handler: Handler,
   middlewareToApply: LambdaMiddleware[] = []
