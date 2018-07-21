@@ -1,7 +1,7 @@
 import middy from '@middy/core';
 
-export namespace Serverlize {
-  export namespace Lambda {
+declare namespace Serverlize {
+  namespace Lambda {
     export type Middleware = middy.IMiddyMiddlewareObject;
 
     // Re-export `*Handler` types from `aws-lambda`

@@ -6,7 +6,7 @@ describe('Plugin', () => {
   it('creates a response object', async () => {
     const plugin = new Plugin({ service: { provider: { stage: 'foo' } } });
 
-    const response = await plugin.process();
+    const response = await plugin.parseOptions();
     expect(response).toEqual({ foo: 'bar' });
   });
 });
