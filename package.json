@@ -24,6 +24,7 @@
     "precommit": "lerna run --concurrency 1 --stream precommit",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "commit": "$(yarn bin)/git-cz",
+    "lint": "lerna run --concurrency 1 --stream lint",
     "test": "lerna run --concurrency 1 --stream test"
   },
   "devDependencies": {

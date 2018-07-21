@@ -22,7 +22,7 @@
   },
   "scripts": {
     "precommit": "$(yarn bin)/lint-staged",
-    "lint": "tslint {src,test}/**/*.ts",
+    "lint": "tslint -p tsconfig.json -t codeFrame './src/**/*.ts'",
     "prebuild": "rimraf dist",
     "build": "tsc",
     "test": "jest",
@@ -42,6 +42,8 @@
     "rimraf": "^2.6.2",
     "ts-jest": "^23.0.0",
     "tslint": "^5.8.0",
+    "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
+    "tslint-config-prettier": "^1.14.0",
     "typescript": "^2.9.0"
   }
 }

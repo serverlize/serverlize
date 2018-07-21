@@ -5385,6 +5385,10 @@ tslint-config-prettier@^1.1.0:
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.13.0.tgz#189e821931ad89e0364e4e292d5c44a14e90ecd6"
 
+tslint-config-prettier@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.14.0.tgz#860b36634e53f4c70c64c51ff3ef7fd9bbab7676"
+
 tslint-config-standard@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/tslint-config-standard/-/tslint-config-standard-7.1.0.tgz#6bcc435a179478e365f6cc62312a561221985760"
