@@ -1,4 +1,8 @@
-# DynamoDB
+---
+id: dynamodb-modeller
+title: DynamoDB Modeller
+sidebar_label: Modeller
+---
 
 ```typescript
 // Pets.ts
