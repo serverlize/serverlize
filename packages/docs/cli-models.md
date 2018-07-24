@@ -1,4 +1,8 @@
-# CLI
+---
+id: cli-models
+title: CLI Models
+sidebar_label: Models
+---
 
 The CLI tool helps you get the mundane jobs done quickly.
 

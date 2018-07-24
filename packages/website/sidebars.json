@@ -1,0 +1,8 @@
+{
+  "docs": {
+    "Introduction": ["getting-started-installation"],
+    "CLI": ["cli-events", "cli-models", "cli-tinker"],
+    "Lambda": ["lambda-middleware"],
+    "DynamoDB": ["dynamodb-modeller"]
+  }
+}
