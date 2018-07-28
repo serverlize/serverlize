@@ -6,8 +6,8 @@
   "typings": "dist/index.d.ts",
   "license": "MIT",
   "author": {
-    "name": "Endemol Shine Group Technology",
-    "url": "https://github.com/EndemolShineGroup"
+    "name": "Serverlize",
+    "url": "https://github.com/serverlize"
   },
   "contributors": [
     "Hassan Khan <hassan.khan@endemolshine.com>",
