@@ -41,10 +41,10 @@ class Footer extends React.Component {
               Getting Started
             </a>
             <a href={this.docUrl('doc2.html', language)}>
-              Guides (or other categories)
+              Guides
             </a>
             <a href={this.docUrl('doc3.html', language)}>
-              API Reference (or other categories)
+              API Reference
             </a>
           </div>
           <div>
@@ -53,14 +53,14 @@ class Footer extends React.Component {
               User Showcase
             </a>
             <a
-              href="http://stackoverflow.com/questions/tagged/"
+              href="https://stackoverflow.com/questions/tagged/serverlize"
               target="_blank"
               rel="noreferrer noopener">
               Stack Overflow
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
+            <a href="https://gitter.im/serverlize/Lobby">Project Chat</a>
             <a
-              href="https://twitter.com/"
+              href="https://twitter.com/serverlize"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
@@ -69,7 +69,7 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://github.com/serverlize">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}

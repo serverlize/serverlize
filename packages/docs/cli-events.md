@@ -1,6 +1,6 @@
 ---
 id: cli-events
-title: CLI Events
+title: Events
 sidebar_label: Events
 ---
 

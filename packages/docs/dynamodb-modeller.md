@@ -1,7 +1,7 @@
 ---
 id: dynamodb-modeller
-title: DynamoDB Modeller
-sidebar_label: Modeller
+title: DynamoDB
+sidebar_label: DynamoDB
 ---
 
 ```typescript
