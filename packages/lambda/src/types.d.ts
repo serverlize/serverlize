@@ -2,7 +2,11 @@ import middy from '@middy/core';
 
 declare namespace Serverlize {
   namespace Lambda {
+    // Re-export Middleware types from `@middy/core`
     export type Middleware = middy.IMiddyMiddlewareObject;
+    export type MiddlewareFunction = middy.IMiddyMiddlewareFunction;
+    export type MiddlewareHandlerWrapper = middy.IHandlerLambda;
+    export type MiddlewareNextFunction = middy.IMiddyNextFunction;
 
     // Re-export `*Handler` types from `aws-lambda`
     export type Handler = AWSLambda.Handler;
@@ -20,6 +24,7 @@ declare namespace Serverlize {
     export type KinesisStreamHandler = AWSLambda.KinesisStreamHandler;
     export type CustomAuthorizerHandler = AWSLambda.CustomAuthorizerHandler;
 
+    // Re-export `Handler` type from `middy`
     export type EnhancedHandler = middy.IMiddy;
   }
 }
