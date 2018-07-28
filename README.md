@@ -1,5 +1,6 @@
 # serverlize
 
+[![MIT Licensed][icon-license]][link-license]
 [![NPM Version][icon-npm]][link-npm]
 [![Build Status][icon-ci]][link-ci]
 [![Greenkeeper Status][icon-greenkeeper]][link-greenkeeper]
@@ -43,6 +44,8 @@ Under-the-hood:
 [link-graphql]: https://github.com/facebook/graphql
 [link-middy]: https://github.com/middyjs/middy
 
+[icon-license]: https://img.shields.io/github/license/serverlize/serverlize.svg?style=flat-square
+[link-license]: LICENSE
 [icon-npm]: https://img.shields.io/npm/v/@serverlize/framework.svg?style=flat-square
 [link-npm]: https://google.com
 [icon-ci]: https://img.shields.io/travis/serverlize/serverlize.svg?style=flat-square
