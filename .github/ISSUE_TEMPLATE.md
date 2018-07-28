@@ -1,5 +1,5 @@
 <!--
-1. If you have a question and not a bug/feature request please ask it at https://gitter.im/serverless/lobby
+1. If you have a question and not a bug/feature request please ask it at https://gitter.im/serverlize/lobby
 2. Please check if an issue already exists so there are no duplicates
 3. Check out and follow our Guidelines: https://github.com/serverlize/serverlize/blob/master/CONTRIBUTING.md
 4. Fill out the whole template so we have a good overview on the issue
