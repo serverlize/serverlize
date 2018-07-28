@@ -1,19 +1,23 @@
 language: node_js
 
 node_js:
-  - v10
-  - v9
-  - v8
-  - v7
-  - v6
+  - 10
+  - 8
+  - 6
 
 before_install:
-  npm i -g yarn
+  - npm i -g yarn
+  - yarn global add greenkeeper-lockfile@2
+
+before_script:
+  - greenkeeper-lockfile-update
+
+after_script:
+  - greenkeeper-lockfile-upload
 
 matrix:
   allow_failures:
-    - node_js: v9
-    - node_js: v10
+    - node_js: 10
 
 notifications:
   webhooks:
@@ -22,3 +26,7 @@ notifications:
     on_success: change
     on_failure: always
     on_start: never
+
+env:
+  global:
+    secure: lPICcn4ooynZAkuAo8fwqJGqve3HHqZQRZz2VU2mIwNBdl/M3gPWqF7+6WlRDGpVzkIqeCA/xbgLQ1TgF6EE2E1+1dXE1CYxli7ae/8SKx7cZ27T/S1bfkSb6OyzYdD0E3T2mheGQfDFOC27IbITmA+yKYt24wD46CPMPr2JCl6DsYS9Jxcdbo1bZgsYMEU3z4hhaxVEHI2j8imjWRnvfGaqBQxrOaC0nojL7B/oGTIOpghLRsKp4Kc+2Jwd8zysvi8RQuqPNA1hmgP+PF85qeTfdAeU32RUcYAmu2xx3PNfRfxG83Pqa29Xfbm/VRfewCZcAZeBlznf6RWUYgWmA+9Me887vwzsxumPyA+VqCbIQfhvtaEAO16EGX9Uj6Eey7TCFnOWw6mHYowW2ky1tfptE3wTF9q4ioFqQIqtraRJpiKYPl/hzTrCe/jHlEjHP7f/FiuDa7iDv80oUTM2G+Ld+N0oJiuHcyywa99QalCanZ6XcZT3tWN6czNnCbSkiix6WK99e+X8Unxh+rJFZnZ4v3mlGIdeNZAIRrLS0+/RUanGGiO0IN+iqARtIGtAF+NR2BconSQoa6eD+c22MzuIVRcLkxi4wp84sDlEVKIjgK7HmSV4paZqcDgQzmvTCJIWyBwAJYy6DCKVHNo0grWlmIO1/Nh0MJbotYId/+8=
