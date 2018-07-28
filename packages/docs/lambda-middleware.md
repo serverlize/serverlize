@@ -1,10 +1,10 @@
 ---
 id: lambda-middleware
-title: Lambda Middleware
+title: Middleware
 sidebar_label: Middleware
 ---
 
-Serverlize provides a powerful middleware engine through [MiddyJS][link-middyjs]. This means that any middleware written for use with MiddyJS will work with Serverlize.
+Serverlize provides a powerful middleware engine through [MiddyJS][link-middyjs]. This also means that any middleware written for use with MiddyJS will work with Serverlize.
 
 ```typescript
 import urlEncodeBodyParser from '@middy/http-urlencode-body-parser';
@@ -22,22 +22,35 @@ export default enhance(handler, middleware);
 
 ## Custom middleware
 
-A middleware object is a simple object that defines one or more of the following keys:
+A middleware object conforms to the `Serverlize.Lambda.Middleware` type, which requires one of the following to be defined:
 
-    - `before`: This function is called before the Lambda is executed
-    - `after`: This function is called after the Lambda is executed
-    - `onError`: This function is called if the Lambda throws an error
+ - `before`: This function is called before the handler function is invoked
+ - `after`: This function is called after the handler function is invoked
+ - `onError`: This function is called if the handler function throws an error
 
-All three events have the same signature:
-
-```typescript
-function (handler: IHandlerLambda, next: IMiddyNextFunction): void | Promise<any> {
-  // ...
-}
-```
+All three events conform to the `Serverlize.Lambda.MiddlewareFunction` type
 
 ## Inline middleware
 
+Middleware can also be created on-the-fly, as the following example illustrates:
+
+```typescript
+import urlEncodeBodyParser from '@middy/http-urlencode-body-parser';
+import httpErrorHandler from '@middy/http-error-handler';
+import enhance from '@serverlize/lambda';
+
+const middleware = [ urlEncodeBodyParser(), httpErrorHandler() ];
+
+const handler = async (event, context) => {
+  // Core logic
+}
+
+handler.before((handler, next) => {
+  // Do something before handler is invoked
+});
+
+export default enhance(handler, middleware);
+```
 
 
 [link-middyjs]: https://middy.js.org/

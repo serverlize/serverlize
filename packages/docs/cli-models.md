@@ -1,6 +1,6 @@
 ---
 id: cli-models
-title: CLI Models
+title: Models
 sidebar_label: Models
 ---
 

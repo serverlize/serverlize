@@ -1,6 +1,12 @@
 {
   "docs": {
-    "Introduction": ["getting-started-installation"],
+    "Getting Started": [
+      "getting-started-installation",
+      "getting-started-directory-structure",
+      "getting-started-create-event",
+      "getting-started-create-model",
+      "getting-started-deployment"
+    ],
     "CLI": ["cli-events", "cli-models", "cli-tinker"],
     "Lambda": ["lambda-middleware"],
     "DynamoDB": ["dynamodb-modeller"]

@@ -1,6 +1,6 @@
 ---
 id: cli-tinker
-title: CLI Tinker
+title: Tinker
 sidebar_label: Tinker
 ---
 
