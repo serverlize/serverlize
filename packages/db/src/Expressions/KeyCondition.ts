@@ -1,12 +1,18 @@
-import * as DynamoDB from 'aws-sdk/clients/dynamodb';
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 
 import AbstractExpression from './AbstractExpression';
 
-type Inputs = DynamoDB.Types.QueryInput;
-type KeyConditionOutput = Pick<Inputs, 'KeyConditionExpression' | 'ExpressionAttributeNames' | 'ExpressionAttributeValues'>
+export type Inputs = DocumentClient.QueryInput;
+export type KeyConditionOutput = Pick<
+  Inputs,
+  | 'KeyConditionExpression'
+  | 'ExpressionAttributeNames'
+  | 'ExpressionAttributeValues'
+>;
 
-export default class KeyCondition extends AbstractExpression<KeyConditionOutput> {
-
+export default class KeyCondition extends AbstractExpression<
+  KeyConditionOutput
+> {
   generate = () => {
     return {
       KeyConditionExpression: `#attribute ${this.operator} :value`,
@@ -17,5 +23,5 @@ export default class KeyCondition extends AbstractExpression<KeyConditionOutput>
         ':value': this.value,
       },
     };
-  }
+  };
 }
