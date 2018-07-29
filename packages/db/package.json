@@ -54,6 +54,7 @@
     "@types/node": "^10.5.2",
     "aws-sdk": "^2.78.0",
     "cross-env": "^5.0.1",
+    "dynamodb-local": "^0.0.22",
     "jest": "^23.0.0",
     "lint-staged": "^7.2.0",
     "lodash.camelcase": "^4.3.0",
