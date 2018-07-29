@@ -29,8 +29,8 @@ export type GetOptions = Omit<
   ExcludedLookupProps
 >;
 export type UpdateOptions = Omit<
-  DynamoDB.DocumentClient.PutItemInput,
-  ExcludedItemProps
+  DynamoDB.DocumentClient.UpdateItemInput,
+  ExcludedLookupProps
 >;
 export type DeleteOptions = Omit<
   DynamoDB.DocumentClient.DeleteItemInput,
@@ -145,7 +145,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    * Updates an item in the DynamoDB table.
    * @param {D} item
    * @param {UpdateOptions} options
-   * @returns {Promise<DynamoDB.DocumentClient.UpdateItemOutput>}
+   * @returns {Promise<Model>}
    */
   static async update<D extends DataSchema>(item: D, options?: UpdateOptions) {
     const key: KeySchema = {
@@ -153,12 +153,14 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
       [this.table.rangeKey]: item[this.table.rangeKey],
     };
 
-    return this.adapter.update({
+    await this.adapter.update({
       TableName: this.table.name,
       Key: key,
 
       ...options,
     });
+
+    return this.createModelInstance(item);
   }
 
   /**
@@ -329,8 +331,8 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
   };
 
   /**
-   * Serializese the model instance to a POJO.
-   * @returns {D}
+   * Serializes the model instance to a POJO.
+   * @returns {DataSchema}
    */
   toObject = () => {
     return this.item as D;
