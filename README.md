@@ -5,6 +5,10 @@
 [![Build Status][icon-ci]][link-ci]
 [![Greenkeeper Status][icon-greenkeeper]][link-greenkeeper]
 
+[![Code Issues][icon-issues]][link-issues]
+[![Codebase Maintainability][icon-maintainability]][link-maintainability]
+[![Test Coverage][icon-coverage]][link-coverage]
+
 [![Serverless][icon-serverless]][link-serverless]
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Code Style: Prettier][icon-code-style]][link-code-style]
@@ -19,11 +23,10 @@ Under-the-hood:
 - [GraphQL][link-graphql] - for creating graph queries
 - [Middy][link-middy] - for Lambda middleware
 
-`@serverlize/serverless`:
-- `sls slz init` (only required in projects not using `serverlize-starter`)
-- `sls slz model create --init` 
-- `sls slz model create <name> --hashKey <hashKey> [--rangeKey <rangeKey>] --autoscaling 5,5`
-- `sls slz event create <name> --type http|dynamodb|sns --path /hello --arn * --cors true`
+`@serverlize/cli`:
+- `slz model create`
+- `slz model create <name> --hashKey <hashKey> [--rangeKey <rangeKey>] --autoscaling 5,5`
+- `slz event create <name> --type http|dynamodb|sns --path /hello --arn * --cors true`
 
 `@serverlize/db`:
 - Provides `Model` and `Schema` classes
@@ -37,7 +40,7 @@ Under-the-hood:
 - Wraps Middy for Lambda middleware
 
 `@serverless/framework`:
-- Wraps `@serverless/core`, `@serverless/db` and `@serverless/lambda`
+- Wraps `@serverless/db` and `@serverless/lambda`
 
 [link-cloudform]: https://github.com/bright/cloudform
 [link-dynamoose]: https://github.com/dynamoosejs/dynamoose
@@ -52,6 +55,14 @@ Under-the-hood:
 [link-ci]: https://travis-ci.org/serverlize/serverlize
 [icon-greenkeeper]: https://badges.greenkeeper.io/serverlize/serverlize.svg?style=flat-square
 [link-greenkeeper]: https://greenkeeper.io/
+
+[icon-issues]: https://img.shields.io/codeclimate/issues/serverlize/serverlize.svg?style=flat-square
+[link-issues]: https://codeclimate.com/github/serverlize/serverlize/issues
+[icon-maintainability]: https://img.shields.io/codeclimate/maintainability/serverlize/serverlize.svg?style=flat-square
+[link-maintainability]: https://codeclimate.com/github/serverlize/serverlize
+[icon-coverage]: https://img.shields.io/codeclimate/coverage-letter/serverlize/serverlize.svg?style=flat-square
+[link-coverage]: https://codeclimate.com/github/serverlize/serverlize
+
 [icon-serverless]: http://public.serverless.com/badges/v2.svg
 [link-serverless]: http://www.serverless.com
 [icon-semantic-release]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
