@@ -1,0 +1,10 @@
+version: "2"
+
+plugins:
+  markdownlint:
+    enabled: true
+
+exclude_patterns:
+  - "tests/"
+  - "**/*.spec.ts"
+  - "packages/db/src/Expressions/Grammars/"
