@@ -12,26 +12,26 @@
 ## Description
 
 For bug reports:
-* What went wrong?
-* What did you expect should have happened?
-* What was the config you used?
-* What stacktrace or error message from your provider did you see?
+  - What went wrong?
+  - What did you expect should have happened?
+  - What was the config you used?
+  - What stacktrace or error message from your provider did you see?
 
 For feature proposals:
-* What is the use case that should be solved. The more detail you describe this in the easier it is to understand for us.
-* If there is additional config how would it look
+  - What is the use case that should be solved. The more detail you describe this in, the easier it is to understand for us.
+  - If there is additional config how would it look
 
 Similar or dependent issues:
-* #12345
+  - #12345
 
 ## Additional Data
 
-***Version of Serverlize you're using***:
+Version of Serverlize you're using:
 
-***Operating System***:
+Operating System:
 
 <details>
-<summary>***Stack Trace***:</summary>
+<summary>Stack Trace:</summary>
 
 <!--
 Paste stack trace here
@@ -44,7 +44,7 @@ $
 </details>
 
 <details>
-<summary>***Provider Error messages***:</summary>
+<summary>Provider Error messages:</summary>
 
 <!--
 Paste stack trace here
