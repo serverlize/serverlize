@@ -1,4 +1,4 @@
-import * as DynamoDB from 'aws-sdk/clients/dynamodb';
+import { DocumentClient } from 'aws-sdk/clients/dynamodb';
 
 import AdapterInterface from './Adapters/AdapterInterface';
 import Collection from './Collection';
@@ -14,38 +14,32 @@ export type ExcludedLookupProps = 'TableName' | 'Key';
 export type ExcludedItemProps = 'TableName' | 'Item';
 export type ExcludedBatchProps = 'RequestItems';
 
-export type PutOptions = Omit<
-  DynamoDB.DocumentClient.PutItemInput,
-  ExcludedItemProps
->;
+export type PutOptions = Omit<DocumentClient.PutItemInput, ExcludedItemProps>;
 export type CreateOptions = Omit<
-  DynamoDB.DocumentClient.PutItemInput,
+  DocumentClient.PutItemInput,
   | 'ConditionExpression'
   | 'ExpressionAttributeNames'
   | 'ExpressionAttributeValues'
 >;
-export type GetOptions = Omit<
-  DynamoDB.DocumentClient.GetItemInput,
-  ExcludedLookupProps
->;
+export type GetOptions = Omit<DocumentClient.GetItemInput, ExcludedLookupProps>;
 export type UpdateOptions = Omit<
-  DynamoDB.DocumentClient.UpdateItemInput,
+  DocumentClient.UpdateItemInput,
   ExcludedLookupProps
 >;
 export type DeleteOptions = Omit<
-  DynamoDB.DocumentClient.DeleteItemInput,
+  DocumentClient.DeleteItemInput,
   ExcludedLookupProps
 >;
 export type BatchGetOptions = Omit<
-  DynamoDB.DocumentClient.BatchGetItemInput,
+  DocumentClient.BatchGetItemInput,
   ExcludedBatchProps
 >;
 export type BatchPutOptions = Omit<
-  DynamoDB.DocumentClient.BatchWriteItemInput,
+  DocumentClient.BatchWriteItemInput,
   ExcludedBatchProps
 >;
 export type BatchDeleteOptions = Omit<
-  DynamoDB.DocumentClient.BatchWriteItemInput,
+  DocumentClient.BatchWriteItemInput,
   ExcludedBatchProps
 >;
 
@@ -190,15 +184,13 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
     items: D[],
     options?: BatchPutOptions
   ): Promise<any> {
-    const requests: DynamoDB.DocumentClient.WriteRequest[] = items.map(
-      (item: D) => {
-        return {
-          PutRequest: {
-            Item: item,
-          },
-        };
-      }
-    );
+    const requests: DocumentClient.WriteRequest[] = items.map((item: D) => {
+      return {
+        PutRequest: {
+          Item: item,
+        },
+      };
+    });
 
     await this.adapter.batchWrite({
       RequestItems: {
@@ -246,15 +238,13 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
     keys: K[],
     options?: BatchDeleteOptions
   ) {
-    const requests: DynamoDB.DocumentClient.WriteRequest[] = keys.map(
-      (key: K) => {
-        return {
-          DeleteRequest: {
-            Key: key,
-          },
-        };
-      }
-    );
+    const requests: DocumentClient.WriteRequest[] = keys.map((key: K) => {
+      return {
+        DeleteRequest: {
+          Key: key,
+        },
+      };
+    });
 
     await this.adapter.batchWrite({
       RequestItems: {
