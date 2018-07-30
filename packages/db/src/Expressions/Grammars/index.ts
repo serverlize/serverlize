@@ -253,6 +253,87 @@ export var ParserRules: NearleyRule[] = [
     symbols: ['boolIn$string$1'],
     postprocess: (d) => ({ type: 'boolIn', value: d[0] }),
   },
+  { name: 'opValues$ebnf$1', symbols: [] },
+  {
+    name: 'opValues$ebnf$1',
+    symbols: ['opValues$ebnf$1', 'extraOpValue'],
+    postprocess: (d) => d[0].concat([d[1]]),
+  },
+  {
+    name: 'opValues',
+    symbols: ['opValue', 'opValues$ebnf$1'],
+    postprocess: (d) => ({ type: 'opValues', value: [d[0]].concat(d[1]) }),
+  },
+  {
+    name: 'extraOpValue$subexpression$1$ebnf$1',
+    symbols: ['_'],
+    postprocess: id,
+  },
+  {
+    name: 'extraOpValue$subexpression$1$ebnf$1',
+    symbols: [],
+    postprocess: () => null,
+  },
+  {
+    name: 'extraOpValue$subexpression$1',
+    symbols: [
+      { literal: ',' },
+      'extraOpValue$subexpression$1$ebnf$1',
+      'opValue',
+    ],
+  },
+  {
+    name: 'extraOpValue',
+    symbols: ['extraOpValue$subexpression$1'],
+    postprocess: (d) => {
+      return d[0][2];
+    },
+  },
+  {
+    name: 'path',
+    symbols: ['opKey'],
+    postprocess: (d) => ({ type: 'parameter', value: d }),
+  },
+  {
+    name: 'type',
+    symbols: ['attribute'],
+    postprocess: (d) => ({ type: 'parameter', value: d }),
+  },
+  {
+    name: 'substr',
+    symbols: ['opValue'],
+    postprocess: (d) => ({ type: 'parameter', value: d }),
+  },
+  {
+    name: 'operand',
+    symbols: ['opValue'],
+    postprocess: (d) => ({ type: 'parameter', value: d }),
+  },
+  {
+    name: 'opKey',
+    symbols: ['string', { literal: '.' }, 'string'],
+    postprocess: (d) => ({ type: 'opKey', value: d }),
+  },
+  {
+    name: 'opKey',
+    symbols: ['string'],
+    postprocess: (d) => ({ type: 'opKey', value: d[0] }),
+  },
+  {
+    name: 'opValue',
+    symbols: ['string'],
+    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
+  {
+    name: 'opValue',
+    symbols: ['number'],
+    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
+  {
+    name: 'opValue',
+    symbols: ['boolean'],
+    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
   {
     name: 'condition',
     symbols: ['opKey', '_', 'comparator', '_', 'opValue'],
@@ -283,30 +364,6 @@ export var ParserRules: NearleyRule[] = [
     symbols: ['condition', '_', 'boolOr', '_', 'condition'],
     postprocess: (d) => ({ type: 'condition', value: d }),
   },
-  { name: 'condition$ebnf$1', symbols: [] },
-  {
-    name: 'condition$ebnf$1$subexpression$1$ebnf$1',
-    symbols: ['_'],
-    postprocess: id,
-  },
-  {
-    name: 'condition$ebnf$1$subexpression$1$ebnf$1',
-    symbols: [],
-    postprocess: () => null,
-  },
-  {
-    name: 'condition$ebnf$1$subexpression$1',
-    symbols: [
-      { literal: ',' },
-      'condition$ebnf$1$subexpression$1$ebnf$1',
-      'opValue',
-    ],
-  },
-  {
-    name: 'condition$ebnf$1',
-    symbols: ['condition$ebnf$1', 'condition$ebnf$1$subexpression$1'],
-    postprocess: (d) => d[0].concat([d[1]]),
-  },
   {
     name: 'condition',
     symbols: [
@@ -315,8 +372,7 @@ export var ParserRules: NearleyRule[] = [
       'boolIn',
       '_',
       { literal: '(' },
-      'opValue',
-      'condition$ebnf$1',
+      'opValues',
       { literal: ')' },
     ],
     postprocess: (d) => ({ type: 'condition', value: d }),
@@ -533,51 +589,6 @@ export var ParserRules: NearleyRule[] = [
       { literal: ')' },
     ],
     postprocess: (d) => ({ type: 'function', value: d }),
-  },
-  {
-    name: 'path',
-    symbols: ['opKey'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'type',
-    symbols: ['attribute'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'substr',
-    symbols: ['opValue'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'operand',
-    symbols: ['opValue'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'opKey',
-    symbols: ['string', { literal: '.' }, 'string'],
-    postprocess: (d) => ({ type: 'opKey', value: d }),
-  },
-  {
-    name: 'opKey',
-    symbols: ['string'],
-    postprocess: (d) => ({ type: 'opKey', value: d[0] }),
-  },
-  {
-    name: 'opValue',
-    symbols: ['string'],
-    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
-  },
-  {
-    name: 'opValue',
-    symbols: ['number'],
-    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
-  },
-  {
-    name: 'opValue',
-    symbols: ['boolean'],
-    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
   },
 ];
 
