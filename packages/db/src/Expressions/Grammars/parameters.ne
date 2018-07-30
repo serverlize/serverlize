@@ -8,7 +8,6 @@ type -> attribute                                                       {% (d) =
 substr -> opValue                                                       {% (d) => { return d; } %}
 operand -> opValue                                                      {% (d) => { return d; } %}
 
-
 # DynamoDB keys, including nested properties
 opKey -> string "." string                                              {% (d) => ({ type: "opKey", value: d }) %}
     | string                                                            {% (d) => ({ type: "opKey", value: d[0]}) %}

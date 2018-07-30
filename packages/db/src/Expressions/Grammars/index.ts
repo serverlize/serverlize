@@ -33,38 +33,6 @@ export type NearleySymbol =
 export var Lexer: Lexer | undefined = undefined;
 
 export var ParserRules: NearleyRule[] = [
-  { name: 'string$ebnf$1', symbols: [/[a-zA-Z]/] },
-  {
-    name: 'string$ebnf$1',
-    symbols: ['string$ebnf$1', /[a-zA-Z]/],
-    postprocess: (d) => d[0].concat([d[1]]),
-  },
-  {
-    name: 'string',
-    symbols: ['string$ebnf$1'],
-    postprocess: (d) => ({ type: 'string', value: d[0].join('') }),
-  },
-  { name: 'number$ebnf$1', symbols: [/[0-9]/] },
-  {
-    name: 'number$ebnf$1',
-    symbols: ['number$ebnf$1', /[0-9]/],
-    postprocess: (d) => d[0].concat([d[1]]),
-  },
-  {
-    name: 'number',
-    symbols: ['number$ebnf$1'],
-    postprocess: (d) => ({ type: 'number', value: d[0].join('') }),
-  },
-  {
-    name: 'boolean',
-    symbols: [/[true|false]/],
-    postprocess: (d) => ({ type: 'boolean', value: d[0].join('') }),
-  },
-  {
-    name: '_',
-    symbols: [{ literal: ' ' }],
-    postprocess: (d) => ({ type: 'whitespace', value: d[0] }),
-  },
   {
     name: 'attribute',
     symbols: [{ literal: 'S' }],
@@ -292,22 +260,30 @@ export var ParserRules: NearleyRule[] = [
   {
     name: 'path',
     symbols: ['opKey'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
+    postprocess: (d) => {
+      return d;
+    },
   },
   {
     name: 'type',
     symbols: ['attribute'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
+    postprocess: (d) => {
+      return d;
+    },
   },
   {
     name: 'substr',
     symbols: ['opValue'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
+    postprocess: (d) => {
+      return d;
+    },
   },
   {
     name: 'operand',
     symbols: ['opValue'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
+    postprocess: (d) => {
+      return d;
+    },
   },
   {
     name: 'opKey',
@@ -333,6 +309,38 @@ export var ParserRules: NearleyRule[] = [
     name: 'opValue',
     symbols: ['boolean'],
     postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
+  { name: 'string$ebnf$1', symbols: [/[a-zA-Z]/] },
+  {
+    name: 'string$ebnf$1',
+    symbols: ['string$ebnf$1', /[a-zA-Z]/],
+    postprocess: (d) => d[0].concat([d[1]]),
+  },
+  {
+    name: 'string',
+    symbols: ['string$ebnf$1'],
+    postprocess: (d) => ({ type: 'string', value: d[0].join('') }),
+  },
+  { name: 'number$ebnf$1', symbols: [/[0-9]/] },
+  {
+    name: 'number$ebnf$1',
+    symbols: ['number$ebnf$1', /[0-9]/],
+    postprocess: (d) => d[0].concat([d[1]]),
+  },
+  {
+    name: 'number',
+    symbols: ['number$ebnf$1'],
+    postprocess: (d) => ({ type: 'number', value: d[0].join('') }),
+  },
+  {
+    name: 'boolean',
+    symbols: [/[true|false]/],
+    postprocess: (d) => ({ type: 'boolean', value: d[0].join('') }),
+  },
+  {
+    name: '_',
+    symbols: [{ literal: ' ' }],
+    postprocess: (d) => ({ type: 'whitespace', value: d[0] }),
   },
   {
     name: 'condition',
@@ -377,7 +385,18 @@ export var ParserRules: NearleyRule[] = [
     ],
     postprocess: (d) => ({ type: 'condition', value: d }),
   },
-  { name: 'condition', symbols: ['function'] },
+  {
+    name: 'condition',
+    symbols: ['function'],
+    postprocess: (d) => {
+      return d;
+    },
+  },
+  {
+    name: 'condition',
+    symbols: ['function', '_', 'comparator', '_', 'opValue'],
+    postprocess: (d) => ({ type: 'condition', value: d }),
+  },
   {
     name: 'condition',
     symbols: ['boolNot', '_', 'condition'],

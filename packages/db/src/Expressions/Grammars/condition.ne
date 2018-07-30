@@ -11,7 +11,8 @@ condition -> opKey _ comparator _ opValue                               {% (d) =
     | condition _ boolAnd _ condition                                   {% (d) => ({ type: "condition", value: d }) %}
     | condition _ boolOr _ condition                                    {% (d) => ({ type: "condition", value: d }) %}
     | opKey _ boolIn _ "(" opValues ")"                                 {% (d) => ({ type: "condition", value: d }) %}
-    | function
+    | function                                                          {% (d) => { return d; } %}
+    | function _ comparator _ opValue                                   {% (d) => ({ type: "condition", value: d }) %}
     | boolNot _ condition                                               {% (d) => ({ type: "condition", value: d }) %}
     | "(" condition ")"                                                 {% (d) => ({ type: "condition", value: d }) %}
 
