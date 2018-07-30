@@ -12,59 +12,27 @@ export interface Token {
 }
 
 export interface Lexer {
-  reset: (chunk: string, info: any) => void;
-  next: () => Token | undefined;
-  save: () => any;
-  formatError: (token: Token) => string;
-  has: (tokenType: string) => boolean;
+  reset(chunk: string, info: any): void;
+  next(): Token | undefined;
+  save(): any;
+  formatError(token: Token): string;
+  has(tokenType: string): boolean;
 }
 
 export interface NearleyRule {
   name: string;
   symbols: NearleySymbol[];
-  postprocess?: (d: any[], loc?: number, reject?: {}) => any;
+  postprocess?(d: any[], loc?: number, reject?: {}): any;
 }
 
 export type NearleySymbol =
   | string
   | { literal: any }
-  | { test: (token: any) => boolean };
+  | { test(token: any): boolean };
 
-export var Lexer: Lexer | undefined = undefined;
+export let Lexer: Lexer | undefined;
 
-export var ParserRules: NearleyRule[] = [
-  { name: 'string$ebnf$1', symbols: [/[a-zA-Z]/] },
-  {
-    name: 'string$ebnf$1',
-    symbols: ['string$ebnf$1', /[a-zA-Z]/],
-    postprocess: (d) => d[0].concat([d[1]]),
-  },
-  {
-    name: 'string',
-    symbols: ['string$ebnf$1'],
-    postprocess: (d) => ({ type: 'string', value: d[0].join('') }),
-  },
-  { name: 'number$ebnf$1', symbols: [/[0-9]/] },
-  {
-    name: 'number$ebnf$1',
-    symbols: ['number$ebnf$1', /[0-9]/],
-    postprocess: (d) => d[0].concat([d[1]]),
-  },
-  {
-    name: 'number',
-    symbols: ['number$ebnf$1'],
-    postprocess: (d) => ({ type: 'number', value: d[0].join('') }),
-  },
-  {
-    name: 'boolean',
-    symbols: [/[true|false]/],
-    postprocess: (d) => ({ type: 'boolean', value: d[0].join('') }),
-  },
-  {
-    name: '_',
-    symbols: [{ literal: ' ' }],
-    postprocess: (d) => ({ type: 'whitespace', value: d[0] }),
-  },
+export let ParserRules: NearleyRule[] = [
   {
     name: 'attribute',
     symbols: [{ literal: 'S' }],
@@ -253,6 +221,127 @@ export var ParserRules: NearleyRule[] = [
     symbols: ['boolIn$string$1'],
     postprocess: (d) => ({ type: 'boolIn', value: d[0] }),
   },
+  { name: 'opValues$ebnf$1', symbols: [] },
+  {
+    name: 'opValues$ebnf$1',
+    symbols: ['opValues$ebnf$1', 'extraOpValue'],
+    postprocess: (d) => d[0].concat([d[1]]),
+  },
+  {
+    name: 'opValues',
+    symbols: ['opValue', 'opValues$ebnf$1'],
+    postprocess: (d) => ({ type: 'opValues', value: [d[0]].concat(d[1]) }),
+  },
+  {
+    name: 'extraOpValue$subexpression$1$ebnf$1',
+    symbols: ['_'],
+    postprocess: id,
+  },
+  {
+    name: 'extraOpValue$subexpression$1$ebnf$1',
+    symbols: [],
+    postprocess: () => null,
+  },
+  {
+    name: 'extraOpValue$subexpression$1',
+    symbols: [
+      { literal: ',' },
+      'extraOpValue$subexpression$1$ebnf$1',
+      'opValue',
+    ],
+  },
+  {
+    name: 'extraOpValue',
+    symbols: ['extraOpValue$subexpression$1'],
+    postprocess: (d) => {
+      return d[0][2];
+    },
+  },
+  {
+    name: 'path',
+    symbols: ['opKey'],
+    postprocess: (d) => {
+      return d;
+    },
+  },
+  {
+    name: 'type',
+    symbols: ['attribute'],
+    postprocess: (d) => {
+      return d;
+    },
+  },
+  {
+    name: 'substr',
+    symbols: ['opValue'],
+    postprocess: (d) => {
+      return d;
+    },
+  },
+  {
+    name: 'operand',
+    symbols: ['opValue'],
+    postprocess: (d) => {
+      return d;
+    },
+  },
+  {
+    name: 'opKey',
+    symbols: ['string', { literal: '.' }, 'string'],
+    postprocess: (d) => ({ type: 'opKey', value: d }),
+  },
+  {
+    name: 'opKey',
+    symbols: ['string'],
+    postprocess: (d) => ({ type: 'opKey', value: d[0] }),
+  },
+  {
+    name: 'opValue',
+    symbols: ['string'],
+    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
+  {
+    name: 'opValue',
+    symbols: ['number'],
+    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
+  {
+    name: 'opValue',
+    symbols: ['boolean'],
+    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
+  },
+  { name: 'string$ebnf$1', symbols: [/[a-zA-Z]/] },
+  {
+    name: 'string$ebnf$1',
+    symbols: ['string$ebnf$1', /[a-zA-Z]/],
+    postprocess: (d) => d[0].concat([d[1]]),
+  },
+  {
+    name: 'string',
+    symbols: ['string$ebnf$1'],
+    postprocess: (d) => ({ type: 'string', value: d[0].join('') }),
+  },
+  { name: 'number$ebnf$1', symbols: [/[0-9]/] },
+  {
+    name: 'number$ebnf$1',
+    symbols: ['number$ebnf$1', /[0-9]/],
+    postprocess: (d) => d[0].concat([d[1]]),
+  },
+  {
+    name: 'number',
+    symbols: ['number$ebnf$1'],
+    postprocess: (d) => ({ type: 'number', value: d[0].join('') }),
+  },
+  {
+    name: 'boolean',
+    symbols: [/[true|false]/],
+    postprocess: (d) => ({ type: 'boolean', value: d[0].join('') }),
+  },
+  {
+    name: '_',
+    symbols: [{ literal: ' ' }],
+    postprocess: (d) => ({ type: 'whitespace', value: d[0] }),
+  },
   {
     name: 'condition',
     symbols: ['opKey', '_', 'comparator', '_', 'opValue'],
@@ -283,30 +372,6 @@ export var ParserRules: NearleyRule[] = [
     symbols: ['condition', '_', 'boolOr', '_', 'condition'],
     postprocess: (d) => ({ type: 'condition', value: d }),
   },
-  { name: 'condition$ebnf$1', symbols: [] },
-  {
-    name: 'condition$ebnf$1$subexpression$1$ebnf$1',
-    symbols: ['_'],
-    postprocess: id,
-  },
-  {
-    name: 'condition$ebnf$1$subexpression$1$ebnf$1',
-    symbols: [],
-    postprocess: () => null,
-  },
-  {
-    name: 'condition$ebnf$1$subexpression$1',
-    symbols: [
-      { literal: ',' },
-      'condition$ebnf$1$subexpression$1$ebnf$1',
-      'opValue',
-    ],
-  },
-  {
-    name: 'condition$ebnf$1',
-    symbols: ['condition$ebnf$1', 'condition$ebnf$1$subexpression$1'],
-    postprocess: (d) => d[0].concat([d[1]]),
-  },
   {
     name: 'condition',
     symbols: [
@@ -315,13 +380,23 @@ export var ParserRules: NearleyRule[] = [
       'boolIn',
       '_',
       { literal: '(' },
-      'opValue',
-      'condition$ebnf$1',
+      'opValues',
       { literal: ')' },
     ],
     postprocess: (d) => ({ type: 'condition', value: d }),
   },
-  { name: 'condition', symbols: ['function'] },
+  {
+    name: 'condition',
+    symbols: ['function'],
+    postprocess: (d) => {
+      return d;
+    },
+  },
+  {
+    name: 'condition',
+    symbols: ['function', '_', 'comparator', '_', 'opValue'],
+    postprocess: (d) => ({ type: 'condition', value: d }),
+  },
   {
     name: 'condition',
     symbols: ['boolNot', '_', 'condition'],
@@ -534,51 +609,6 @@ export var ParserRules: NearleyRule[] = [
     ],
     postprocess: (d) => ({ type: 'function', value: d }),
   },
-  {
-    name: 'path',
-    symbols: ['opKey'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'type',
-    symbols: ['attribute'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'substr',
-    symbols: ['opValue'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'operand',
-    symbols: ['opValue'],
-    postprocess: (d) => ({ type: 'parameter', value: d }),
-  },
-  {
-    name: 'opKey',
-    symbols: ['string', { literal: '.' }, 'string'],
-    postprocess: (d) => ({ type: 'opKey', value: d }),
-  },
-  {
-    name: 'opKey',
-    symbols: ['string'],
-    postprocess: (d) => ({ type: 'opKey', value: d[0] }),
-  },
-  {
-    name: 'opValue',
-    symbols: ['string'],
-    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
-  },
-  {
-    name: 'opValue',
-    symbols: ['number'],
-    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
-  },
-  {
-    name: 'opValue',
-    symbols: ['boolean'],
-    postprocess: (d) => ({ type: 'opValue', value: d[0] }),
-  },
 ];
 
-export var ParserStart: string = 'condition';
+export let ParserStart: string = 'condition';
