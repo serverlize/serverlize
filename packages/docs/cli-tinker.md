@@ -12,9 +12,9 @@ $ slz tinker
 
 You should see the following:
 
-<< INSERT IMAGE OF TS-NODE RUNNING >>
+>  INSERT IMAGE OF TS-NODE RUNNING
 
 From here, any snippet of code can be imported and run interactively.
 
-<< INSERT IMAGE OF RESULT OF `Pets.get()` >>
+> INSERT IMAGE OF RESULT OF `Pets.get()`
 
