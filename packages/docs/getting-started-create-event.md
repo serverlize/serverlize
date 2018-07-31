@@ -10,4 +10,5 @@ From the project root, type the following command into your terminal:
 $ slz event create hello --path /
 ```
 
-You should now see a new folder under `functions/` called `hello`. Inside are two files, `handler.ts` and `function.yml`.
+You should now see a new folder under `functions/` called `hello`. Inside are 
+two files, `handler.ts` and `function.yml`.

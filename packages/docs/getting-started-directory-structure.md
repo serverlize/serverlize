@@ -4,4 +4,6 @@ title: Directory Structure
 sidebar_label: Directory Structure
 ---
 
-// Explain various folders and files
+Once inside the project, you should have a folder structure as follows:
+
+> Paste output of `tree` command
