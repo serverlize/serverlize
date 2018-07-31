@@ -6,11 +6,12 @@ sidebar_label: Create a Model
 
 From the project root, type the following command into your terminal:
 
-```sh
+```bash
 $ slz model create --name pets --hashKey id:S --rangeKey ownerId:S --autoscaling 5,5
 ```
 
-A new file named `Pets` should now exist at `app/models/Pets.ts`. After opening it in your text editor, you should see the following:
+A new file named `Pets` should now exist at `app/models/Pets.ts`. After 
+opening it in your text editor, you should see the following:
 
 ```typescript
 import DB from '@serverlize/db';

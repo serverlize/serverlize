@@ -4,7 +4,9 @@ title: Middleware
 sidebar_label: Middleware
 ---
 
-Serverlize provides a powerful middleware engine through [MiddyJS][link-middyjs]. This also means that any middleware written for use with MiddyJS will work with Serverlize.
+Serverlize provides a powerful middleware engine through [MiddyJS][link-middyjs].
+This also means that any middleware written for use with MiddyJS will work just
+as well with Serverlize.
 
 ```typescript
 import urlEncodeBodyParser from '@middy/http-urlencode-body-parser';
@@ -22,7 +24,8 @@ export default enhance(handler, middleware);
 
 ## Custom middleware
 
-A middleware object conforms to the `Serverlize.Lambda.Middleware` type, which requires one of the following to be defined:
+A middleware object conforms to the `Serverlize.Lambda.Middleware` type, which 
+requires one of the following to be defined:
 
  - `before`: This function is called before the handler function is invoked
  - `after`: This function is called after the handler function is invoked

@@ -4,9 +4,12 @@ title: Events
 sidebar_label: Events
 ---
 
-`slz event create <name> --type <event> --path /hello --arn * --cors true`
+```bash
+$ slz event create <name> --type <event> --path /hello --arn * --cors true
+```
 
-where `event` is one of 
+where `event` is one of:
+ 
 - `http`
 - `stream`
 - `s3`
