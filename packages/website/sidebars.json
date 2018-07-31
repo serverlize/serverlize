@@ -7,8 +7,17 @@
       "getting-started-create-model",
       "getting-started-deployment"
     ],
-    "CLI": ["cli-events", "cli-models", "cli-tinker"],
+    "CLI": [
+      "cli-events",
+      "cli-models",
+      "cli-deploy",
+      "cli-remove",
+      "cli-tinker"
+    ],
+    "Authentication": [],
     "Lambda": ["lambda-middleware"],
-    "DynamoDB": ["dynamodb-modeller"]
+    "DynamoDB": ["dynamodb-modeller"],
+    "Testing": [],
+    "Developer": []
   }
 }
