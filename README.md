@@ -13,33 +13,38 @@
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Code Style: Prettier][icon-code-style]][link-code-style]
 
-Features:
+## Features:
+
 - Has a CLI utility to speed up development cycles
 - Handy middleware for Lambda functions
 - DynamoDB Data Modelling
 
-Under-the-hood:
+## Under-the-hood:
+
 - [CloudForm][link-cloudform] - for CFN stack generation
 - [GraphQL][link-graphql] - for creating graph queries
 - [Middy][link-middy] - for Lambda middleware
 
 `@serverlize/cli`:
-- `slz model create`
-- `slz model create <name> --hashKey <hashKey> [--rangeKey <rangeKey>] --autoscaling 5,5`
-- `slz event create <name> --type http|dynamodb|sns --path /hello --arn * --cors true`
+
+- Provides commands to quickly generate handlers and models
 
 `@serverlize/db`:
+
 - Provides `Model` and `Schema` classes
 - Supports generating CloudFormation templates for DynamoDB tables
 - (GraphQL) Allows generating `Type`/`InputType` from a `Schema`
 
 `@serverlize/framework`:
+
 - Wraps CloudForm for template generation
 
 `@serverlize/lambda`:
+
 - Wraps Middy for Lambda middleware
 
 `@serverless/framework`:
+
 - Wraps `@serverless/db` and `@serverless/lambda`
 
 [link-cloudform]: https://github.com/bright/cloudform
