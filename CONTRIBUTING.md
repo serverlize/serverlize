@@ -6,40 +6,41 @@ Documentation for this project is available at the [documentation site][link-doc
 
 ## Guidelines
 
-- **Monorepo:** This project uses
+- **Monorepo:** This repo makes use of Lerna and Yarn Workspaces to manage
+  the source for multiple packages.
 
 - **Coding Standard:** Linting errors are checked by TSLint and stylistic
-issues are handled by Prettier. Keeping a consistent style throughout the
-codebase keeps the cognitive load low for all contributors and keeps the
-code style homogeneous.
+  issues are handled by Prettier. Keeping a consistent style throughout the
+  codebase keeps the cognitive load low for all contributors and keeps the
+  code style homogeneous.
 
 - **Node 8 LTS:** `serverlize` has a minimum Node version requirement of 8.0.0.
-Pull requests must not require a Node version greater than that unless the
-feature is enabled/backported via TypeScript.
+  Pull requests must not require a Node version greater than that unless the
+  feature is enabled/backported via TypeScript.
 
 - **Add tests:** All pull requests should include unit tests to ensure the
-change works as expected and to prevent regressions.
+  change works as expected and to prevent regressions.
 
 - **Document any change in behaviour:** Make sure any documentation is kept
-up-to-date.
+  up-to-date.
 
 - **Consider our release cycle:** We try to follow [SemVer v2][link-semver].
-Randomly breaking public APIs is not an option.
+  Randomly breaking public APIs is not an option.
 
 - **Use Git Flow:** Don't ask us to pull from your `master` branch. Set up
-[Git Flow][link-git-flow] and create a new feature branch from `develop`.
+  [Git Flow][link-git-flow] and create a new feature branch from `develop`.
 
 - **One pull request per feature:** If you want to do more than one thing, send
-multiple pull requests.
+  multiple pull requests.
 
 - **Send coherent history:** Make sure each individual commit in your pull
-request is meaningful. If you had to make multiple intermediate commits while
-developing, please [squash them][link-git-rewrite] before submitting.
+  request is meaningful. If you had to make multiple intermediate commits while
+  developing, please [squash them][link-git-rewrite] before submitting.
 
 - **Useful commit messages:** Commit messages should be short and descriptive,
-and follow [Conventional Changelog Standard][link-conventional-changelog]. The
-best way to do this is to use `yarn commit` instead of interacting with Git
-directly.
+  and follow [Conventional Changelog Standard][link-conventional-changelog].
+  The best way to do this is to use `yarn commit` instead of interacting with
+  Git directly.
 
 ## Running tests
 

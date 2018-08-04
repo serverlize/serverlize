@@ -37,7 +37,7 @@ $
 </details>
 
 ### Similar or dependent issues:
-  
+
 - #12345
 
 ## Additional Data
