@@ -1,5 +1,8 @@
 {
   "docs": {
+    "Prologue": [
+      "introduction-readme"
+    ],
     "Getting Started": [
       "getting-started-installation",
       "getting-started-directory-structure",
@@ -24,6 +27,8 @@
       "dynamodb-delete"
     ],
     "Testing": [],
-    "Developer": []
+    "Developer": [
+      "developer-contributing"
+    ]
   }
 }
