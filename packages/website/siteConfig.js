@@ -94,6 +94,10 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/serverlize/serverlize',
+  editUrl: 'https://github.com/serverlize/serverlize/edit/master/docs/', // @TODO Change to develop
+
+  /* Specify custom path to load documentation from */
+  customDocsPath: '../docs'
 };
 
 module.exports = siteConfig;
