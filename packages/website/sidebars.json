@@ -16,7 +16,13 @@
     ],
     "Authentication": [],
     "Lambda": ["lambda-middleware"],
-    "DynamoDB": ["dynamodb-modeller"],
+    "DynamoDB": [
+      "dynamodb-getting-started",
+      "dynamodb-define",
+      "dynamodb-retrieve",
+      "dynamodb-insert-update",
+      "dynamodb-delete"
+    ],
     "Testing": [],
     "Developer": []
   }
