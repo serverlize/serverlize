@@ -24,8 +24,6 @@
     "Getting Started": "Getting Started",
     "dynamodb-insert-update": "Inserting/Updating Models",
     "Inserting/Updating Models": "Inserting/Updating Models",
-    "dynamodb-modeller": "DynamoDB",
-    "DynamoDB": "DynamoDB",
     "dynamodb-retrieve": "Retrieving Models",
     "Retrieving Models": "Retrieving Models",
     "getting-started-create-event": "Create an Event",
@@ -46,6 +44,7 @@
     "CLI": "CLI",
     "Authentication": "Authentication",
     "Lambda": "Lambda",
+    "DynamoDB": "DynamoDB",
     "Testing": "Testing",
     "Developer": "Developer"
   },
