@@ -15,39 +15,8 @@
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Code Style: Prettier][icon-code-style]][link-code-style]
 
-## Features:
-
-- Has a CLI utility to speed up development cycles
-- Handy middleware for Lambda functions
-- DynamoDB Data Modelling
-
-## Under-the-hood:
-
-- [CloudForm][link-cloudform] - for CFN stack generation
-- [GraphQL][link-graphql] - for creating graph queries
-- [Middy][link-middy] - for Lambda middleware
-
-`@serverlize/cli`:
-
-- Provides commands to quickly generate handlers and models
-
-`@serverlize/db`:
-
-- Provides `Model` and `Schema` classes
-- Supports generating CloudFormation templates for DynamoDB tables
-- (GraphQL) Allows generating `Type`/`InputType` from a `Schema`
-
-`@serverlize/framework`:
-
-- Wraps CloudForm for template generation
-
-`@serverlize/lambda`:
-
-- Wraps Middy for Lambda middleware
-
-`@serverless/framework`:
-
-- Wraps `@serverless/db` and `@serverless/lambda`
+Serverlize is a NodeJS framework for Serverless applications that combines
+best-of-breed tooling with an intuitive, Rails-like development workflow.
 
 [link-cloudform]: https://github.com/bright/cloudform
 [link-dynamoose]: https://github.com/dynamoosejs/dynamoose
