@@ -23,6 +23,7 @@
   "scripts": {
     "precommit": "$(yarn bin)/lint-staged",
     "examples": "docusaurus-examples",
+    "prestart": "node scripts/prepareDocs",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
     "publish-gh-pages": "docusaurus-publish",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "docusaurus": "^1.3.2",
+    "fs-extra": "^7.0.0",
     "lint-staged": "^7.2.0"
   }
 }
