@@ -17,7 +17,7 @@ model and call its' `save()` method:
 
 > @TODO
 
-## Inserting/Updating Aggregates
+## Aggregates
 
 > @TODO
 

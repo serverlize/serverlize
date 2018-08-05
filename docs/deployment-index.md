@@ -1,5 +1,5 @@
 ---
-id: getting-started-deployment
+id: deployment-index
 title: Deployment
 sidebar_label: Deployment
 ---

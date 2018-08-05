@@ -21,9 +21,17 @@ pets.forEach((pet) => {
 
 ## Retrieving Single Models
 
-> @TODO
+```typescript
+import Pet from '@app/models/Pet';
 
-## Retrieving Aggregates
+const pets = Pet.find({ id: '', createdAt:  });
+
+pets.forEach((pet) => {
+  console.log(pet.name);
+});
+```
+
+## Aggregates
 
 > @TODO
 
