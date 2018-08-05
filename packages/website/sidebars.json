@@ -5,10 +5,7 @@
     ],
     "Getting Started": [
       "getting-started-installation",
-      "getting-started-directory-structure",
-      "getting-started-create-event",
-      "getting-started-create-model",
-      "getting-started-deployment"
+      "getting-started-directory-structure"
     ],
     "CLI": [
       "cli-events",
@@ -27,6 +24,7 @@
       "dynamodb-delete"
     ],
     "Testing": [],
+    "Deployment": ["deployment-index"],
     "Developer": [
       "developer-contributing"
     ]

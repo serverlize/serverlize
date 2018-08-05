@@ -4,7 +4,6 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-The data mapper included with Serverlize provides a simple, blazing-fast(TM)
+The data mapper included with Serverlize provides a simple, blazing-fast&trade;
 way of working with your DynamoDB tables. Each table corresponds to a `Model`,
-which provides a simple, expressive way of querying as well as inserting
-records.
+which provides a simple, expressive way for all kinds of operations.

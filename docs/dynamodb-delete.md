@@ -6,7 +6,7 @@ sidebar_label: Deleting Models
 
 > @TODO
 
-## Deleting Aggregates
+## Aggregates
 
 > @TODO
 
