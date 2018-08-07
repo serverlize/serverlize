@@ -1,7 +1,6 @@
 ---
 id: dynamodb-define
 title: Defining Models
-sidebar_label: Defining Models
 ---
 
 To get started, we will create a model. The easiest way to create a model is

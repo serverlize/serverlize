@@ -1,7 +1,6 @@
 ---
 id: developer-contributing
 title: Contributing
-sidebar_label: Contributing
 ---
 
 ## Documentation

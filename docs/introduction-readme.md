@@ -1,7 +1,6 @@
 ---
 id: introduction-readme
 title: Introduction
-sidebar_label: Introduction
 ---
 
 [![MIT Licensed][icon-license]][link-license]

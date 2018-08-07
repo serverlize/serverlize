@@ -1,7 +1,6 @@
 ---
 id: dynamodb-getting-started
 title: Getting Started
-sidebar_label: Getting Started
 ---
 
 The data mapper included with Serverlize provides a simple, blazing-fast&trade;

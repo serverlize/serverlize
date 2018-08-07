@@ -1,7 +1,6 @@
 ---
 id: appendix-further-reading
 title: Further Reading
-sidebar_label: Further Reading
 ---
 
 ## DynamoDB
