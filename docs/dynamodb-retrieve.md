@@ -1,7 +1,6 @@
 ---
 id: dynamodb-retrieve
 title: Retrieving Models
-sidebar_label: Retrieving Models
 ---
 
 Once you have created a model and its associated DynamoDB resource, you are

@@ -4,11 +4,10 @@ const fs = require('fs-extra');
 const rootPath = path.resolve(__dirname, '..', '..', '..');
 const docsPath = path.resolve(rootPath, 'docs');
 
-const createFrontMatter = ({ id, title, sidebarTitle }) => {
+const createFrontMatter = ({ id, title }) => {
   return `---
 id: ${id}
 title: ${title}
-sidebar_label: ${sidebarTitle}
 ---`;
 };
 
@@ -19,7 +18,6 @@ const files = [
     frontMatter: createFrontMatter({
       id: 'introduction-readme',
       title: 'Introduction',
-      sidebarTitle: 'Introduction',
     }),
   },
   {
@@ -28,7 +26,6 @@ const files = [
     frontMatter: createFrontMatter({
       id: 'developer-contributing',
       title: 'Contributing',
-      sidebarTitle: 'Contributing',
     }),
   },
 ];

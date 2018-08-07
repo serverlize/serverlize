@@ -1,7 +1,6 @@
 ---
 id: lambda-middleware
 title: Middleware
-sidebar_label: Middleware
 ---
 
 Serverlize provides a powerful middleware engine through [MiddyJS][link-middyjs].

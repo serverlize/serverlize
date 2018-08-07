@@ -1,7 +1,6 @@
 ---
 id: cli-tinker
 title: Tinker
-sidebar_label: Tinker
 ---
 
 Serverlize provides a convenient REPL environment to interact with an

@@ -1,7 +1,6 @@
 ---
 id: dynamodb-insert-update
 title: Inserting/Updating Models
-sidebar_label: Inserting/Updating Models
 ---
 
 ## Inserts

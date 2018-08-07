@@ -1,7 +1,6 @@
 ---
 id: cli-events
 title: Events
-sidebar_label: Events
 ---
 
 ```bash
