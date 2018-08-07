@@ -54,5 +54,8 @@
     "@serverlize/*": [
       "packages/*/src"
     ]
+  },
+  "greenkeeper": {
+    "label": "#greenkeeper"
   }
 }
