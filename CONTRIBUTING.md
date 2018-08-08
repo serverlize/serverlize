@@ -2,21 +2,23 @@
 
 ## Documentation
 
-Documentation for this project is available at the [documentation site][link-docs].
+Documentation for this project is available at the
+[documentation site][link-docs].
 
 ## Guidelines
 
-- **Monorepo:** This repo makes use of Lerna and Yarn Workspaces to manage
-  the source for multiple packages.
+- **Monorepo:** This repo makes use of [Lerna][link-lerna] and
+  [Yarn Workspaces][link-yarn-workspaces] to manage the source for multiple
+  packages.
 
-- **Coding Standard:** Linting errors are checked by TSLint and stylistic
-  issues are handled by Prettier. Keeping a consistent style throughout the
-  codebase keeps the cognitive load low for all contributors and keeps the
-  code style homogeneous.
+- **Coding Standard:** Linting errors are checked by [TSLint][link-tslint] and
+  stylistic issues are handled by [Prettier][link-prettier]. Keeping a
+  consistent style throughout the codebase keeps the cognitive load low for all
+  contributors and keeps the code style homogeneous.
 
 - **Node 8 LTS:** `serverlize` has a minimum Node version requirement of 8.0.0.
   Pull requests must not require a Node version greater than that unless the
-  feature is enabled/backported via TypeScript.
+  feature is enabled/backported via [TypeScript][link-typescript].
 
 - **Add tests:** All pull requests should include unit tests to ensure the
   change works as expected and to prevent regressions.
@@ -72,6 +74,11 @@ will be deployed as soon as possible.
 **Happy coding**!
 
 [link-docs]: http://serverlize.github.io
+[link-lerna]: https://lernajs.io/
+[link-yarn-workspaces]: https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/
+[link-tslint]: https://palantir.github.io/tslint/
+[link-prettier]: https://prettier.io/
+[link-typescript]: https://www.typescriptlang.org/
 [link-semver]: http://semver.org/
 [link-git-flow]: http://nvie.com/posts/a-successful-git-branching-model/
 [link-git-rewrite]: http://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages

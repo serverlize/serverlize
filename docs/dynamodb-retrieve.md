@@ -30,11 +30,11 @@ pets.forEach((pet) => {
 });
 ```
 
-## Aggregates
+## Aggregate operations
 
 > @TODO
 
-### Batch operations
+### Batch
 
 > @TODO
 

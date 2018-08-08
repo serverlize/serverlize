@@ -8,14 +8,18 @@
       "getting-started-directory-structure"
     ],
     "CLI": [
-      "cli-events",
+      "cli-functions",
       "cli-models",
       "cli-deploy",
       "cli-remove",
-      "cli-tinker"
+      "cli-tinker",
+      "cli-custom"
     ],
     "Authentication": [],
-    "Lambda": ["lambda-middleware"],
+    "Lambda": [
+      "lambda-middleware",
+      "lambda-security"
+    ],
     "DynamoDB": [
       "dynamodb-getting-started",
       "dynamodb-define",
@@ -23,7 +27,10 @@
       "dynamodb-insert-update",
       "dynamodb-delete"
     ],
-    "Testing": [],
+    "Testing": [
+      "testing-unit",
+      "testing-integration"
+    ],
     "Deployment": ["deployment-index"],
     "Developer": [
       "developer-contributing"

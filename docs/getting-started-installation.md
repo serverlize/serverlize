@@ -5,7 +5,7 @@ title: Installation
 
 ## Prerequisites
 
-Serverlize requires at least Node v8 or greater, and [Yarn][link-yarn] is 
+Serverlize requires at least Node v8 or greater, and [Yarn][link-yarn] is
 highly recommended for dependency management.
 
 ## Creating a project

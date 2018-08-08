@@ -1,20 +1,21 @@
 ---
-id: cli-events
+id: cli-functions
 title: Events
 ---
 
 ```bash
-$ slz event create <name> --type <event> --path /hello --arn * --cors true
+$ slz function create <name> --type <event> --path /hello --auth aws.iam
 ```
 
 where `event` is one of:
- 
+
 - `http`
 - `stream`
 - `s3`
 - `schedule`
 - `sns`
 - `sqs`
+
 - `alexaSkill`
 - `iot`
 - `cloudwatchEvent`

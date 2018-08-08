@@ -5,10 +5,10 @@ title: Deleting Models
 
 > @TODO
 
-## Aggregates
+## Aggregate operations
 
 > @TODO
 
-### Batch operations
+### Batch
 
 > @TODO
