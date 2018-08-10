@@ -26,7 +26,7 @@
     "commit": "$(yarn bin)/git-cz",
     "lint": "lerna run --concurrency 10 --stream lint",
     "build": "lerna run --concurrency 10 --stream build",
-    "test": "lerna run --concurrency 10 --stream test"
+    "test": "lerna run --concurrency 10 --stream test:prod"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
