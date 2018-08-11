@@ -39,24 +39,32 @@
     "ts": "$(yarn bin)/ts-node -r tsconfig-paths/register"
   },
   "peerDependencies": {
-    "aws-sdk": ">=2",
+    "@aws/dynamodb-data-mapper": ">=0.7.2",
+    "@aws/dynamodb-data-mapper-annotations": ">=0.7.2",
+    "aws-sdk": "^2",
     "collect.js": ">=4",
-    "lodash.find": ">=4"
+    "lodash.find": ">=4",
+    "lodash.isarray": ">=4",
+    "lodash.pick": ">=4",
+    "winston": ">=3"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "@aws/dynamodb-data-mapper": "^0.7.2",
+    "@aws/dynamodb-data-mapper-annotations": "^0.7.2",
     "@types/jest": "^23",
     "@types/lodash.find": "^4",
-    "@types/lodash.isarray": "^4.0.4",
-    "@types/lodash.pick": "^4.4.4",
+    "@types/lodash.isarray": "^4",
+    "@types/lodash.pick": "^4",
     "@types/node": "^10",
     "aws-sdk": "^2",
     "collect.js": "^4",
     "jest": "^23",
     "lint-staged": "^7",
     "lodash.find": "^4",
-    "lodash.isarray": "^4.0.0",
-    "lodash.pick": "^4.4.0",
+    "lodash.isarray": "^4",
+    "lodash.pick": "^4",
     "npm-package-json-lint": "^3",
     "prettier": "^1",
     "rimraf": "^2",
@@ -74,6 +82,7 @@
     "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
     "tslint-config-prettier": "^1",
     "typedoc": "^0.12.0",
-    "typescript": "^3"
+    "typescript": "^3",
+    "winston": "^3"
   }
 }
