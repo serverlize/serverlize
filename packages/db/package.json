@@ -29,7 +29,10 @@
     "precommit": "$(yarn bin)/lint-staged",
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build:tsc": "tsc --module commonjs",
+    "build:rollup": "rollup -c",
+    "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build": "yarn build:tsc && yarn build:rollup && yarn build:docs",
     "start": "rollup -c -w",
     "test": "jest",
     "test:prod": "yarn lint && yarn test --coverage --no-cache",
@@ -39,7 +42,6 @@
     "aws-sdk": ">=2.78.0"
   },
   "dependencies": {
-    "cloudform": "^2.2.1",
     "collect.js": "^4.0.19",
     "lodash.find": "^4.6.0",
     "lodash.isarray": "^4.0.0",
@@ -72,7 +74,6 @@
     "tslint": "^5.8.0",
     "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
     "tslint-config-prettier": "^1.1.0",
-    "tslint-config-standard": "^7.1.0",
     "typedoc": "^0.11.0",
     "typescript": "^2.9.0"
   }
