@@ -6,7 +6,8 @@
         "packages/db/package.json",
         "packages/framework/package.json",
         "packages/lambda/package.json",
-        "packages/serverless/package.json"
+        "packages/serverless/package.json",
+        "packages/website/package.json"
       ]
     }
   }
