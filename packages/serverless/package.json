@@ -51,6 +51,6 @@
     "tslint": "^5.8.0",
     "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
     "tslint-config-prettier": "^1.14.0",
-    "typescript": "^2.9.0"
+    "typescript": "^3.0.1"
   }
 }
