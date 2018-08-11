@@ -28,39 +28,39 @@
     utf8-bytes "^0.0.1"
 
 "@aws/dynamodb-data-mapper-annotations@^0.7.2":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@aws/dynamodb-data-mapper-annotations/-/dynamodb-data-mapper-annotations-0.7.3.tgz#8c04598a1dd3ec1b69996020afebcecc6f2c41f7"
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@aws/dynamodb-data-mapper-annotations/-/dynamodb-data-mapper-annotations-0.7.2.tgz#edd72f39e053e02f8a6b97a10290afa905041d42"
   dependencies:
     "@aws/dynamodb-auto-marshaller" "^0.7.1"
-    "@aws/dynamodb-data-mapper" "^0.7.3"
-    "@aws/dynamodb-data-marshaller" "^0.7.3"
+    "@aws/dynamodb-data-mapper" "^0.7.2"
+    "@aws/dynamodb-data-marshaller" "^0.7.1"
     reflect-metadata "^0.1.10"
     tslib "^1.8.1"
     uuid "^3.0.0"
 
-"@aws/dynamodb-data-mapper@^0.7.2", "@aws/dynamodb-data-mapper@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@aws/dynamodb-data-mapper/-/dynamodb-data-mapper-0.7.3.tgz#813aea68590017f27bc706989f8500a3c7869c3b"
+"@aws/dynamodb-data-mapper@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@aws/dynamodb-data-mapper/-/dynamodb-data-mapper-0.7.2.tgz#1715c7e1fd1fad87b105fde4a20b5a3f5fae9947"
   dependencies:
     "@aws/dynamodb-auto-marshaller" "^0.7.1"
     "@aws/dynamodb-batch-iterator" "^0.7.1"
-    "@aws/dynamodb-data-marshaller" "^0.7.3"
-    "@aws/dynamodb-expressions" "^0.7.3"
+    "@aws/dynamodb-data-marshaller" "^0.7.1"
+    "@aws/dynamodb-expressions" "^0.7.1"
     "@aws/dynamodb-query-iterator" "^0.7.1"
     tslib "^1.8.1"
 
-"@aws/dynamodb-data-marshaller@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@aws/dynamodb-data-marshaller/-/dynamodb-data-marshaller-0.7.3.tgz#6769362551c01396ab224840933432a9db701f5b"
+"@aws/dynamodb-data-marshaller@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@aws/dynamodb-data-marshaller/-/dynamodb-data-marshaller-0.7.1.tgz#9a35e839ff61cc79154b21f6d12ef25b97de4a58"
   dependencies:
     "@aws/dynamodb-auto-marshaller" "^0.7.1"
-    "@aws/dynamodb-expressions" "^0.7.3"
+    "@aws/dynamodb-expressions" "^0.7.1"
     tslib "^1.8.1"
     utf8-bytes "^0.0.1"
 
-"@aws/dynamodb-expressions@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@aws/dynamodb-expressions/-/dynamodb-expressions-0.7.3.tgz#abfda5dbda54f51c58a3bd038c710b7119fc8949"
+"@aws/dynamodb-expressions@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@aws/dynamodb-expressions/-/dynamodb-expressions-0.7.1.tgz#2d2f61d0d962eb50238d5dfba302ddd8c63dc3c3"
   dependencies:
     "@aws/dynamodb-auto-marshaller" "^0.7.1"
     tslib "^1.8.1"
