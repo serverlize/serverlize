@@ -5,7 +5,8 @@
     ],
     "Getting Started": [
       "getting-started-installation",
-      "getting-started-directory-structure"
+      "getting-started-directory-structure",
+      "getting-started-configuration"
     ],
     "CLI": [
       "cli-functions",
@@ -15,8 +16,8 @@
       "cli-tinker",
       "cli-custom"
     ],
-    "Authentication": [],
     "Lambda": [
+      "lambda-logging",
       "lambda-middleware",
       "lambda-security"
     ],
@@ -31,7 +32,9 @@
       "testing-unit",
       "testing-integration"
     ],
-    "Deployment": ["deployment-index"],
+    "Deployment": [
+      "deployment-index"
+    ],
     "Developer": [
       "developer-contributing"
     ]

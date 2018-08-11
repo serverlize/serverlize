@@ -4,7 +4,7 @@ title: Security
 ---
 
 Security is a core aspect of Serverlize applications, and there are multiple
-aspects to consider
+aspects to consider.
 
 ## Credentials
 
@@ -21,20 +21,23 @@ the function handler class.
 Functions can be individually or globally configured for authentication. Each
 function can have an `auth` property.
 
-To globally configure authentication, set `lambda.http.auth` to the required
-value.
+To globally configure authentication, set `lambda.http.auth` in
+[`.serverlize.config.ts`][link-configuration] to the desired value.
 
 ### API Keys
 
-Set the `auth` property to `apiKey`.
+Set the `auth` property to `aws.apiKey`. Requests must include the key as the
+[`x-api-key`][link-api-key] header.
 
 ### AWS IAM
 
-Set the `auth` property to `aws.iam`.
+Set the `auth` property to `aws.iam`. Requests must be signed using the
+[AWS Signature v4][link-aws-sig-v4] process.
 
 ### AWS Cognito User Pools
 
-Set the `auth` property to `aws.cognito`.
+Set the `auth` property to `aws.cognitoUserPools`. Requests must include the
+[`idToken`][link-cognito] as the `Authorization` header.
 
 ### Custom Authentication
 
@@ -45,11 +48,17 @@ $ slz function create Authorizer --type auth:custom
 ```
 
 This will create a function under `functions/Authorizer/index.ts` with a
-`handler()` method. This method should return a valid IAM Policy that either
-allows or denies access based on input received from the `event` object.
+default exported property called `handler()`. This function should return
+a valid IAM Policy that either allows or denies access based on input
+received from the `event` object.
 
 ## Authorization
 
 > @TODO This might be better left to a future version
 
 [link-aws-kms]: http://google.com
+[link-middy-ssm]: https://github.com/middyjs/middy/tree/1.0.0-alpha/packages/ssm
+[link-configuration]: ./getting-started-configuration
+[link-api-key]: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-rest-api.html#api-gateway-usage-plan-test-with-postman
+[link-aws-sig-v4]: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
+[link-cognito]: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-enable-cognito-user-pool.html
