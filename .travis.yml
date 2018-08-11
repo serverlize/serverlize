@@ -3,7 +3,6 @@ language: node_js
 node_js:
   - 10
   - 8
-  - 6
 
 before_install:
   - npm i -g yarn
@@ -28,10 +27,6 @@ after_success:
       ./cc-test-reporter sum-coverage -o coverage/coverage.total.json coverage/coverage.*.json;
       ./cc-test-reporter upload-coverage -i coverage/coverage.total.json;
     fi
-
-matrix:
-  allow_failures:
-    - node_js: 10
 
 notifications:
   webhooks:
