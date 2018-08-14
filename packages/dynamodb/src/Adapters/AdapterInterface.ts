@@ -1,50 +1,51 @@
-import { DocumentClient } from 'aws-sdk/clients/dynamodb';
+import {
+  BatchGetOptions,
+  DataMapper,
+  GetOptions,
+} from '@aws/dynamodb-data-mapper';
+import Model from '../Model';
+import { KeySchema } from '../types';
 
 export default interface AdapterInterface {
-  readonly client: DocumentClient;
+  readonly mapper: DataMapper;
 
   /**
-   * Returns the attributes of one or more items from one or more tables by delegating to AWS.DynamoDB.batchGetItem().
+   * Returns the attributes of one or more items from a table.
    */
-  batchGet(
-    params: DocumentClient.BatchGetItemInput,
-  ): Promise<DocumentClient.BatchGetItemOutput>;
+  batchGet<D, K>(
+    models: Model[],
+    options?: BatchGetOptions,
+  ): AsyncIterableIterator<{}>;
   /**
-   * Puts or deletes multiple items in one or more tables by delegating to AWS.DynamoDB.batchWriteItem().
+   * Puts or overwrites multiple items in a table.
    */
-  batchWrite(
-    params: DocumentClient.BatchWriteItemInput,
-  ): Promise<DocumentClient.BatchWriteItemOutput>;
+  batchPut<D, K>(models: Model[]): AsyncIterableIterator<{}>;
   /**
-   * Deletes a single item in a table by primary key by delegating to AWS.DynamoDB.deleteItem().
+   * Deletes multiple items in a table.
    */
-  delete(
-    params: DocumentClient.DeleteItemInput,
-  ): Promise<DocumentClient.DeleteItemOutput>;
+  batchDelete<D, K>(models: Model[]): AsyncIterableIterator<{}>;
   /**
-   * Returns a set of attributes for the item with the given primary key by delegating to AWS.DynamoDB.getItem().
+   * Deletes a single item in a table by primary key.
    */
-  get(
-    params: DocumentClient.GetItemInput,
-  ): Promise<DocumentClient.GetItemOutput>;
+  delete<D, K>(model: Model): Promise<Model | undefined>;
   /**
-   * Creates a new item, or replaces an old item with a new item by delegating to AWS.DynamoDB.putItem().
+   * Returns a set of attributes for the item with the given primary key.
    */
-  put(
-    params: DocumentClient.PutItemInput,
-  ): Promise<DocumentClient.PutItemOutput>;
+  get<D, K>(model: Model, options?: GetOptions): Promise<Model>;
   /**
-   * Edits an existing item's attributes, or adds a new item to the table if it does not already exist by delegating to AWS.DynamoDB.updateItem().
+   * Creates a new item, or replaces an old item with a new item.
    */
-  update(
-    params: DocumentClient.UpdateItemInput,
-  ): Promise<DocumentClient.UpdateItemOutput>;
+  put<D, K>(model: Model): Promise<Model>;
+  /**
+   * Edits an existing item's attributes, or adds a new item to the table if it does not already exist.
+   */
+  update<D, K>(model: Model): Promise<Model>;
   /**
    * Directly access items from a table by primary key or a secondary index.
    */
-  query(params: DocumentClient.QueryInput): Promise<DocumentClient.QueryOutput>;
+  query(key: KeySchema, model: typeof Model): any;
   /**
    * Returns one or more items and item attributes by accessing every item in a table or a secondary index.
    */
-  scan(params: DocumentClient.ScanInput): Promise<DocumentClient.ScanOutput>;
+  scan(model: typeof Model): any;
 }

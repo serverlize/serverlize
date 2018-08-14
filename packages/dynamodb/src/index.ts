@@ -1,1 +1,1 @@
-export * from './DB';
+export * from './Model';

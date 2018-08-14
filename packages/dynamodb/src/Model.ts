@@ -1,55 +1,7 @@
-import * as DynamoDB from 'aws-sdk/clients/dynamodb';
-
 import AdapterInterface from './Adapters/AdapterInterface';
-import Collection from './Collection';
-import Query from './Requests/Query';
-import Scan from './Requests/Scan';
-import TableInterface from './Resources/TableInterface';
-import SchemaInterface from './Schemas/SchemaInterface';
 import { DataSchema, KeySchema } from './types';
-import { Omit } from './Util';
 
-// Exclude certain options since they can be set via API
-export type ExcludedLookupProps = 'TableName' | 'Key';
-export type ExcludedItemProps = 'TableName' | 'Item';
-export type ExcludedBatchProps = 'RequestItems';
-
-export type PutOptions = Omit<
-  DynamoDB.DocumentClient.PutItemInput,
-  ExcludedItemProps
->;
-export type CreateOptions = Omit<
-  DynamoDB.DocumentClient.PutItemInput,
-  | 'ConditionExpression'
-  | 'ExpressionAttributeNames'
-  | 'ExpressionAttributeValues'
->;
-export type GetOptions = Omit<
-  DynamoDB.DocumentClient.GetItemInput,
-  ExcludedLookupProps
->;
-export type UpdateOptions = Omit<
-  DynamoDB.DocumentClient.PutItemInput,
-  ExcludedItemProps
->;
-export type DeleteOptions = Omit<
-  DynamoDB.DocumentClient.DeleteItemInput,
-  ExcludedLookupProps
->;
-export type BatchGetOptions = Omit<
-  DynamoDB.DocumentClient.BatchGetItemInput,
-  ExcludedBatchProps
->;
-export type BatchPutOptions = Omit<
-  DynamoDB.DocumentClient.BatchWriteItemInput,
-  ExcludedBatchProps
->;
-export type BatchDeleteOptions = Omit<
-  DynamoDB.DocumentClient.BatchWriteItemInput,
-  ExcludedBatchProps
->;
-
-export default class Model<D extends DataSchema, K extends KeySchema> {
+export default class Model<D extends DataSchema = D, K extends KeySchema = K> {
   /************************************
    *         STATIC METHODS           *
    ************************************/
@@ -58,226 +10,129 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    * Instance of `Adapter` for making calls to the DynamoDB SDK.
    */
   public static readonly adapter: AdapterInterface;
-  /**
-   * Instance of `Schema` for model attributes' parsing and validation.
-   */
-  public static readonly schema: SchemaInterface;
-  /**
-   * Instance of `Table` for representing the backing resource on DynamoDB.
-   */
-  public static readonly table: TableInterface;
-
-  /**
-   * Creates a new instance of `Model` from `item`, and assigns a reference to the static Model as a property.
-   * @param {D} item
-   * @returns {Model}
-   */
-  static createModelInstance<D extends DataSchema>(item: D) {
-    const modelInstance = new this(item);
-    modelInstance.$static = this;
-    return modelInstance;
-  }
 
   /**
    * Puts an item in the DynamoDB table. If the key already exists in the table, then this will overwrite the
    * existing item.
-   * @param {D} item
-   * @param {PutOptions} options
+   * @param {DataSchema} item
    * @returns {Promise<Model>}
    */
-  static async put<D extends DataSchema>(item: D, options?: PutOptions) {
-    const request = {
-      TableName: this.table.name,
-      Item: item,
-
-      ...options,
-    };
-
-    await this.adapter.put(request);
-    return this.createModelInstance(item);
+  static async put(item: DataSchema): Promise<Model> {
+    return this.adapter.put(this.hydrateModel(item));
   }
 
   /**
    * Creates a new item in the DynamoDB table. If the key already exists in the table, then this throws a
    * `ConditionalCheckFailed` error.
-   * @param {D} item
-   * @param {CreateOptions} options
+   * @param {DataSchema} item
    * @returns {Promise<Model>}
-   * @throws {ConditionalCheckFailed}
    */
-  static async create<D extends DataSchema>(item: D, options?: CreateOptions) {
-    const putOptions = {
-      ConditionExpression:
-        'attribute_not_exists(#__hash_key) AND attribute_not_exists(#__range_key)',
-      ExpressionAttributeNames: {
-        '#__hash_key': this.table.hashKey,
-        '#__range_key': this.table.rangeKey,
-      },
+  static async create(
+    item: DataSchema,
+    // options?: CreateOptions
+  ): Promise<Model> {
+    // @TODO Convert this to `@aws/dynamodb-expressions` package
+    // const putOptions = {
+    //   ConditionExpression:
+    //     'attribute_not_exists(#__hash_key) AND attribute_not_exists(#__range_key)',
+    //   ExpressionAttributeNames: {
+    //     '#__hash_key': this.table.hashKey,
+    //     '#__range_key': this.table.rangeKey,
+    //   },
+    //
+    //   ...options,
+    // };
+    // @TODO Use a condition to prevent overwrites
 
-      ...options,
-    };
-
-    return this.put(item, putOptions);
+    // return this.adapter.put(this.hydrateModel(item), putOptions);
+    return this.adapter.put(this.hydrateModel(item));
   }
 
   /**
    * Gets an item from the DynamoDB table.
-   * @param {K} key
-   * @param {GetOptions} options
+   * @param {KeySchema} key
    * @returns {Promise<Model>}
    */
-  static async get<K extends KeySchema>(key: K, options?: GetOptions) {
-    const { Item } = await this.adapter.get({
-      TableName: this.table.name,
-      Key: key,
-
-      ...options,
-    });
-
-    if (!Item) {
-      return Promise.resolve({});
-    }
-
-    return this.createModelInstance(Item);
+  static async get(key: KeySchema, options): Promise<Model> {
+    return this.adapter.get(this.hydrateModel(key), options);
   }
 
   /**
    * Updates an item in the DynamoDB table.
-   * @param {D} item
-   * @param {UpdateOptions} options
-   * @returns {Promise<DynamoDB.DocumentClient.UpdateItemOutput>}
+   * @param {DataSchema} item
+   * @returns {Promise<Model>}
    */
-  static async update<D extends DataSchema>(item: D, options?: UpdateOptions) {
-    const key: KeySchema = {
-      [this.table.hashKey]: item[this.table.hashKey],
-      [this.table.rangeKey]: item[this.table.rangeKey],
-    };
-
-    return this.adapter.update({
-      TableName: this.table.name,
-      Key: key,
-
-      ...options,
-    });
+  static async update(item: DataSchema): Promise<Model> {
+    return this.adapter.update(this.hydrateModel(item));
   }
 
   /**
    * Deletes an item in the DynamoDB table.
-   * @param {K} key
-   * @param {DeleteOptions} options
+   * @param {KeySchema} key
    * @returns {Promise<void>}
    */
-  static async delete<K extends KeySchema>(key: K, options?: DeleteOptions) {
-    await this.adapter.delete({
-      TableName: this.table.name,
-      Key: key,
-
-      ...options,
-    });
+  static async delete(key: KeySchema) {
+    await this.adapter.delete(this.hydrateModel(key));
 
     return;
   }
 
   /**
    * Puts a batch of items in the DynamoDB table.
-   * @param {D[]} items
-   * @param {BatchPutOptions} options
-   * @returns {Promise<Collection<DataSchema, KeySchema>>}
+   * @param {DataSchema[]} items
+   * @returns {Promise<Model[]>}
    */
-  static async batchPut<D extends DataSchema, K extends KeySchema>(
-    items: D[],
-    options?: BatchPutOptions,
-  ): Promise<any> {
-    const requests: DynamoDB.DocumentClient.WriteRequest[] = items.map(
-      (item: D) => {
-        return {
-          PutRequest: {
-            Item: item,
-          },
-        };
-      },
-    );
+  static async batchPut(items: DataSchema[]): Promise<any> {
+    const hydratedModels = items.map(this.hydrateModel);
+    await this.adapter.batchPut(hydratedModels);
 
-    await this.adapter.batchWrite({
-      RequestItems: {
-        [this.table.name]: requests,
-      },
-    });
-
-    return new Collection(this, items);
+    return hydratedModels;
   }
 
   /**
-   * Gets a batch of items from the DynamoDB table and returns a `Collection` of `Model` instances.
-   * @param {K[]} keys
-   * @param {BatchGetOptions} options
-   * @returns {Promise<Collection<DataSchema, KeySchema>>}
+   * Gets a batch of items from the DynamoDB table.
+   * @param {KeySchema[]} keys
+   * @returns {Promise<Model[]>}
    */
-  static async batchGet<D extends DataSchema, K extends KeySchema>(
-    keys: K[],
-    options?: BatchGetOptions,
-  ): Promise<any> {
-    const { Responses } = await this.adapter.batchGet({
-      RequestItems: {
-        [this.table.name]: {
-          Keys: keys,
-        },
-      },
-
-      ...options,
-    });
-
-    if (!Responses) {
-      return new Collection(this, []);
-    }
-
-    return new Collection(this, Responses[this.table.name]);
+  static async batchGet(keys: KeySchema[], options): Promise<any> {
+    return this.adapter.batchGet(keys.map(this.hydrateModel), options);
   }
 
   /**
    * Deletes a batch of items from the DynamoDB table.
-   * @param {K[]} keys
-   * @param {BatchPutOptions} options
+   * @param {KeySchema[]} keys
    * @returns {Promise<void>}
    */
-  static async batchDelete<D extends DataSchema, K extends KeySchema>(
-    keys: K[],
-    options?: BatchDeleteOptions,
-  ) {
-    const requests: DynamoDB.DocumentClient.WriteRequest[] = keys.map(
-      (key: K) => {
-        return {
-          DeleteRequest: {
-            Key: key,
-          },
-        };
-      },
-    );
-
-    await this.adapter.batchWrite({
-      RequestItems: {
-        [this.table.name]: requests,
-      },
-    });
+  static async batchDelete(keys: KeySchema[]) {
+    await this.adapter.batchDelete(keys.map(this.hydrateModel));
     return;
   }
 
-  /**
-   * Scans a table or an index.
-   * @param {string} indexName If provided, the scan will be limited to the specified index.
-   * @returns {Scan}
-   */
-  static scan(indexName?: string) {
-    return indexName ? new Scan(this, indexName) : new Scan(this);
-  }
+  // /**
+  //  * Scans a table or an index.
+  //  * @param {string} indexName If provided, the scan will be limited to the specified index.
+  //  * @returns {Scan}
+  //  */
+  // static scan(indexName?: string) {
+  //   return indexName ? new Scan(this, indexName) : new Scan(this);
+  // }
+  //
+  // /**
+  //  * Queries a table or an index.
+  //  * @param {string} indexName If provided, the query will be limited to the specified index.
+  //  * @returns {Query}
+  //  */
+  // static query(indexName?: string) {
+  //   return indexName ? new Query(this, indexName) : new Query(this);
+  // }
 
   /**
-   * Queries a table or an index.
-   * @param {string} indexName If provided, the query will be limited to the specified index.
-   * @returns {Query}
+   * Transform a POJO into a `Model`
+   * @param {DataSchema} item
+   * @returns {Model}
    */
-  static query(indexName?: string) {
-    return indexName ? new Query(this, indexName) : new Query(this);
+  private static hydrateModel(item: DataSchema): Model {
+    return Object.assign(new this(), item);
   }
 
   /************************************
@@ -289,21 +144,16 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    */
   protected $static!: typeof Model;
 
-  /**
-   * Internal POJO representing a DynamoDB item.
-   */
-  protected item: DataSchema;
-
-  constructor(item: DataSchema) {
-    this.item = item;
-  }
+  // constructor(item: DataSchema) {
+  //   this.item = item;
+  // }
 
   /**
    * Saves a model instance to the DynamoDB table.
    * @returns {Promise<Model>}
    */
   save = async () => {
-    return this.$static.put(this.item);
+    return this.$static.put(this);
   };
 
   /**
@@ -311,28 +161,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    * @returns {Promise<void>}
    */
   delete = async () => {
-    const key: KeySchema = {
-      [this.$static.table.hashKey]: this.item[this.$static.table.hashKey],
-      [this.$static.table.rangeKey]: this.item[this.$static.table.rangeKey],
-    };
-
-    await this.$static.delete(key);
+    await this.$static.delete(this);
     return;
-  };
-
-  /**
-   * Serializes the model instance to a JSON string.
-   * @returns {string}
-   */
-  toJson = () => {
-    return JSON.stringify(this.item);
-  };
-
-  /**
-   * Serializese the model instance to a POJO.
-   * @returns {D}
-   */
-  toObject = () => {
-    return this.item as D;
   };
 }
