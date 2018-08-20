@@ -1,6 +1,7 @@
 linters:
   package.json:
-    - npmPkgJsonLint
+    - "npmPkgJsonLint"
   "{src,test}/**/*.ts":
+    - "tslint --fix"
     - "prettier --write"
     - "git add"
