@@ -2,7 +2,8 @@ module.exports = {
   "collectCoverage": true,
   "coveragePathIgnorePatterns": [
     "/node_modules/",
-    "/tests/"
+    "/tests/",
+    "/__fixtures__/"
   ],
   // "coverageThreshold": {
   //   "global": {
@@ -27,5 +28,5 @@ module.exports = {
   "transformIgnorePatterns": [
     "<rootDir>/node_modules/"
   ],
-  "testRegex": ".*\\.spec\\.(ts|tsx|js)$"
+  "testRegex": ".*\\.(spec|integ)\\.(ts|tsx|js)$"
 };
