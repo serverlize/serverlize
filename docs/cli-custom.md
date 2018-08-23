@@ -19,7 +19,7 @@ In addition to the commands provided by default by Serverlize, custom commands
 can also be created. To create a command, type the following into a terminal:
 
 ```bash
-$ slz create command MyCommand
+$ slz command:create MyCommand
 ```
 
 This will create a class called `MyCommand` under `app/Commands`, however, this

@@ -7,7 +7,7 @@ To get started, we will create a model. The easiest way to create one is
 through the CLI:
 
 ```bash
-$ slz model create Pet --hashKey id:string \
+$ slz model:create Pet --hashKey id:string \
 --attribute ownerId:string \
 --timestamps
 ```
