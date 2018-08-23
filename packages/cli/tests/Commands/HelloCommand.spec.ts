@@ -1,4 +1,4 @@
-import HelloCommand from '../../src/commands/hello'
+import HelloCommand from '../../src/Commands/hello'
 
 type ProcessStdOutWrite = (buffer: Buffer | string, cb?: () => void) => boolean;
 
@@ -16,8 +16,7 @@ describe('hello', () => {
       .then(() => {
         expect(mockStdOut)
           .toHaveBeenCalledWith(
-            'hello world from ./src/commands/hello.ts\n'
-          );
+            'hello world from ./src/Commands/hello.ts\n');
       })
       // @TODO HORRIBLE HORRIBLE HORRIBLE
       .catch(() => {});
@@ -28,8 +27,7 @@ describe('hello', () => {
       .then(() => {
         expect(mockStdOut)
           .toHaveBeenCalledWith(
-            'hello jeff from ./src/commands/hello.ts\n'
-          );
+            'hello jeff from ./src/Commands/hello.ts\n');
       })
       // @TODO HORRIBLE HORRIBLE HORRIBLE
       .catch(() => {});

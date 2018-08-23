@@ -1,13 +1,9 @@
 import { Command, flags as Flags } from '@oclif/command';
 
-export default class HelloCommand extends Command {
-  static description = 'describe the command here';
+export default class ModelCommand extends Command {
+  static description = '';
 
-  static examples = [
-    `$ slz hello
-hello world from ./src/hello.ts!
-`,
-  ];
+  static examples = ['$ slz model create'];
 
   static flags = {
     help: Flags.help({ char: 'h' }),
@@ -17,13 +13,12 @@ hello world from ./src/hello.ts!
     name: Flags.string({ char: 'n', description: 'name to print' }),
   };
 
-  static args = [{ name: 'file' }];
+  static args = [{ name: 'name' }];
 
   async run() {
-    const { args, flags } = this.parse(HelloCommand);
+    const { args, flags } = this.parse(ModelCommand);
 
     const name = flags.name || 'world';
-
     this.log(
       `hello ${name} from .${module.filename.replace(process.cwd(), '')}`,
     );

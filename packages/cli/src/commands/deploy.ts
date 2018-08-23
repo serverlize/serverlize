@@ -1,13 +1,9 @@
 import { Command, flags as Flags } from '@oclif/command';
 
-export default class HelloCommand extends Command {
-  static description = 'describe the command here';
+export default class DeployCommand extends Command {
+  static description = 'Deploys the project to your AWS account';
 
-  static examples = [
-    `$ slz hello
-hello world from ./src/hello.ts!
-`,
-  ];
+  static examples = ['$ slz deploy --stage dev'];
 
   static flags = {
     help: Flags.help({ char: 'h' }),
@@ -20,10 +16,9 @@ hello world from ./src/hello.ts!
   static args = [{ name: 'file' }];
 
   async run() {
-    const { args, flags } = this.parse(HelloCommand);
+    const { args, flags } = this.parse(DeployCommand);
 
     const name = flags.name || 'world';
-
     this.log(
       `hello ${name} from .${module.filename.replace(process.cwd(), '')}`,
     );
