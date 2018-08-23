@@ -6,7 +6,7 @@ title: Security
 Security is a core aspect of Serverlize applications, and there are multiple
 aspects to consider.
 
-## Credentials
+## Environment Variables
 
 Serverlize integrates [AWS KMS][link-aws-kms] into as many services that
 support it, providing developers with a hassle-free way of securing Lambdas.
@@ -44,7 +44,7 @@ Set the `auth` property to `aws.cognitoUserPools`. Requests must include the
 To create a Lambda for implementing custom logic, run the following:
 
 ```bash
-$ slz function create Authorizer --type auth:custom
+$ slz function:create Authorizer --type auth:custom
 ```
 
 This will create a function under `functions/Authorizer/index.ts` with a
@@ -56,7 +56,7 @@ received from the `event` object.
 
 > @TODO This might be better left to a future version
 
-[link-aws-kms]: http://google.com
+[link-aws-kms]: https://aws.amazon.com/kms/
 [link-middy-ssm]: https://github.com/middyjs/middy/tree/1.0.0-alpha/packages/ssm
 [link-configuration]: ./getting-started-configuration
 [link-api-key]: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-rest-api.html#api-gateway-usage-plan-test-with-postman

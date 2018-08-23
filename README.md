@@ -10,7 +10,6 @@
 [![Test Coverage][icon-coverage]][link-coverage]
 [![Jest][icon-jest]][link-jest]
 
-[![Serverless][icon-serverless]][link-serverless]
 [![Commitizen][icon-commitizen]][link-commitizen]
 [![Semantic Release][icon-semantic-release]][link-semantic-release]
 [![Prettier][icon-prettier]][link-prettier]
@@ -18,7 +17,7 @@
 
 [![Gitter][icon-gitter]][link-gitter]
 
-Serverlize is a NodeJS framework for Serverless applications that combines
+Serverlize is a NodeJS framework for serverless applications that combines
 best-of-breed tooling with an intuitive, Rails-like development workflow.
 
 [link-cloudform]: https://github.com/bright/cloudform
@@ -44,8 +43,6 @@ best-of-breed tooling with an intuitive, Rails-like development workflow.
 [icon-jest]: https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat-square
 [link-jest]: https://github.com/facebook/jest
 
-[icon-serverless]: http://public.serverless.com/badges/v2.svg
-[link-serverless]: http://www.serverless.com
 [icon-commitizen]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
 [link-commitizen]: http://commitizen.github.io/cz-cli/
 [icon-semantic-release]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
