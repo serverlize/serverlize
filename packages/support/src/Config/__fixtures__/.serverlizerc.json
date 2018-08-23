@@ -1,0 +1,20 @@
+{
+  "appName": "",
+
+  "plugins": [],
+
+  "deploy": {
+    "canary": true
+  },
+
+  "dynamodb": {
+    "autoscale": true
+  },
+
+  "lambda": {
+    "http": {
+      "auth": "aws.iam",
+      "middleware": []
+    }
+  }
+}
