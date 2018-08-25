@@ -35,7 +35,7 @@
     "test:prod": "yarn lint && yarn test --coverage --no-cache"
   },
   "dependencies": {
-    "aws-sdk": "^2.224.1",
+    "aws-sdk": "^2.302.0",
     "lodash": "^4.17.5",
     "winston": "^3.0.0"
   },
