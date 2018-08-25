@@ -54,7 +54,7 @@
     "@types/lodash.isarray": "^4.0.3",
     "@types/lodash.pick": "^4.4.3",
     "@types/node": "^10.5.2",
-    "aws-sdk": "^2.78.0",
+    "aws-sdk": "^2.302.0",
     "cross-env": "^5.0.1",
     "jest": "^23.0.0",
     "lint-staged": "^7.2.0",
