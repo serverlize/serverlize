@@ -73,6 +73,17 @@ will be deployed as soon as possible.
 
 **Happy coding**!
 
+## Contributors
+
+[![][icon-sourcerer-1]][link-sourcerer-1]
+[![][icon-sourcerer-2]][link-sourcerer-2]
+[![][icon-sourcerer-3]][link-sourcerer-3]
+[![][icon-sourcerer-4]][link-sourcerer-4]
+[![][icon-sourcerer-5]][link-sourcerer-5]
+[![][icon-sourcerer-6]][link-sourcerer-6]
+[![][icon-sourcerer-7]][link-sourcerer-7]
+[![][icon-sourcerer-8]][link-sourcerer-8]
+
 [link-docs]: http://serverlize.github.io
 [link-lerna]: https://lernajs.io/
 [link-yarn-workspaces]: https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/
@@ -84,3 +95,20 @@ will be deployed as soon as possible.
 [link-git-rewrite]: http://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages
 [link-conventional-changelog]: https://github.com/conventional-changelog/conventional-changelog
 [link-responsible-disclosure]: http://en.wikipedia.org/wiki/Responsible_disclosure
+
+[icon-sourcerer-1]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/0
+[link-sourcerer-1]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/0
+[icon-sourcerer-2]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/1
+[link-sourcerer-2]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/1
+[icon-sourcerer-3]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/2
+[link-sourcerer-3]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/2
+[icon-sourcerer-4]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/3
+[link-sourcerer-4]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/3
+[icon-sourcerer-5]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/4
+[link-sourcerer-5]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/4
+[icon-sourcerer-6]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/5
+[link-sourcerer-6]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/5
+[icon-sourcerer-7]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/6
+[link-sourcerer-7]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/6
+[icon-sourcerer-8]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/images/7
+[link-sourcerer-8]: https://sourcerer.io/fame/hassankhan/serverlize/serverlize/links/7
