@@ -1,6 +1,6 @@
 ---
-name: Bug report
-about: Create an issue for a bug or any other unexpected behaviour
+name: Documentation Improvement
+about: Create an issue for improving the documentation
 
 ---
 
@@ -15,26 +15,11 @@ about: Create an issue for a bug or any other unexpected behaviour
 
 ## Description
 
-### What went wrong?
-
-### What did you expect should have happened?
-
-### What was the config you used?
-
-### What stacktrace or error messages did you see?
-
-<details>
-  <summary>Stack Trace:</summary>
+***Package***:
 
 <!--
-Paste stack trace here
+1. Any information here is helpful, such as misleading or ambiguous text
 -->
-
-```sh
-$
-```
-
-</details>
 
 ### Similar or dependent issues:
 

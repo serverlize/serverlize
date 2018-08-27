@@ -3,7 +3,7 @@ id: dynamodb-define
 title: Defining Models
 ---
 
-To get started, we will create a model. The easiest way to create a model is
+To get started, we will create a model. The easiest way to create one is
 through the CLI:
 
 ```bash
