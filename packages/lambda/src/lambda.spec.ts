@@ -42,12 +42,10 @@ describe('failure()', () => {
     const result = failure(error);
 
     expect(result.statusCode).toEqual(500);
-    expect(result.body).toEqual(
-      JSON.stringify({
-        type: 'Error',
-        message: error.message,
-        stack: error.stack,
-      })
-    );
+    expect(JSON.parse(result.body)).toEqual({
+      message: error.message,
+      stack: error.stack,
+      type: 'Error',
+    });
   });
 });
