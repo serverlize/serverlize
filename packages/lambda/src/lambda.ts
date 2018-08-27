@@ -4,16 +4,16 @@ import { Serverlize } from './types';
 
 export function enhance(
   handler: Serverlize.Lambda.Handler,
-  middlewareToApply: Serverlize.Lambda.Middleware[] = []
+  middlewareToApply: Serverlize.Lambda.Middleware[] = [],
 ) {
   return middlewareToApply.reduce(
     (
       enhancedHandler: Serverlize.Lambda.EnhancedHandler,
-      middleware: Serverlize.Lambda.Middleware
+      middleware: Serverlize.Lambda.Middleware,
     ) => {
       return enhancedHandler.use(middleware);
     },
-    middy(handler)
+    middy(handler),
   );
 }
 
@@ -27,9 +27,9 @@ export function success(body: {}, statusCode = 200) {
 export function failure(error: Error, statusCode = 500) {
   return {
     body: JSON.stringify({
-      type: error.constructor.name,
       message: error.message,
       stack: error.stack,
+      type: error.constructor.name,
     }),
     statusCode,
   };
