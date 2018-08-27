@@ -1,9 +1,0 @@
-import enhance, { Serverlize } from '@serverlize/lambda';
-
-const middleware = [];
-
-const handler: Serverlize.Lambda.DynamoDBStreamHandler = async (event, context) => {
-  // Your code
-};
-
-export default enhance(handler, middleware);
