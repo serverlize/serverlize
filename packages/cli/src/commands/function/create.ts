@@ -6,9 +6,10 @@ export default class FunctionCreateCommand extends Command {
   static examples = ['$ slz command create', '$ slz command list'];
 
   static flags = {
-    help: Flags.help({ char: 'h' }),
     // flag with no value (-f, --force)
     force: Flags.boolean({ char: 'f' }),
+    // help flag
+    help: Flags.help({ char: 'h' }),
     // flag with a value (-n, --name=VALUE)
     name: Flags.string({ char: 'n', description: 'name to print' }),
   };
