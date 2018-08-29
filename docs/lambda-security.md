@@ -54,7 +54,8 @@ received from the `event` object.
 
 ## Authorization
 
-> @TODO This might be better left to a future version
+We highly recommend using the [`accesscontrol`][link-access-control] package
+available on NPM.
 
 [link-aws-kms]: https://aws.amazon.com/kms/
 [link-middy-ssm]: https://github.com/middyjs/middy/tree/1.0.0-alpha/packages/ssm
@@ -62,3 +63,4 @@ received from the `event` object.
 [link-api-key]: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-usage-plans-with-rest-api.html#api-gateway-usage-plan-test-with-postman
 [link-aws-sig-v4]: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
 [link-cognito]: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-enable-cognito-user-pool.html
+[link-access-control]: https://onury.io/accesscontrol/

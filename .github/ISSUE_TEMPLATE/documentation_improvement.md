@@ -1,5 +1,5 @@
 ---
-name: Documentation Improvement
+name: Documentation improvement
 about: Create an issue for improving the documentation
 
 ---
