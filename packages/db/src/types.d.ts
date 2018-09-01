@@ -19,3 +19,7 @@ export interface Cursor {
   lastKey: KeySchema;
   request: string;
 }
+
+declare namespace Serverlize {
+  namespace DynamoDB { class Model {} }
+}

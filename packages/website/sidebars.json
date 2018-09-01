@@ -1,7 +1,8 @@
 {
   "docs": {
     "Prologue": [
-      "introduction-readme"
+      "introduction-readme",
+      "introduction-preface"
     ],
     "Getting Started": [
       "getting-started-installation",
