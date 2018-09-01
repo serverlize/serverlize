@@ -21,8 +21,6 @@
     "yarn": ">=1.3.0"
   },
   "scripts": {
-    "precommit": "lerna run --concurrency 10 --stream precommit",
-    "commitmsg": "commitlint -E GIT_PARAMS",
     "commit": "$(yarn bin)/git-cz",
     "lint": "lerna run --concurrency 10 --stream lint",
     "build": "lerna run --concurrency 10 --stream build",
@@ -33,7 +31,7 @@
     "@commitlint/config-conventional": "^7.0.1",
     "@commitlint/prompt": "^7.0.0",
     "commitizen": "^2.10.1",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.13",
     "lerna": "^3.0.1",
     "ts-node": "^7.0.0",
     "typescript": "^3.0.1",
