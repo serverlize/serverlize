@@ -38,8 +38,9 @@ best-of-breed tooling with an intuitive, Rails-like development workflow.
 [link-issues]: https://codeclimate.com/github/serverlize/serverlize/issues
 [icon-maintainability]: https://img.shields.io/codeclimate/maintainability/serverlize/serverlize.svg?longCache=true&style=for-the-badge
 [link-maintainability]: https://codeclimate.com/github/serverlize/serverlize
-[icon-coverage]: https://img.shields.io/codeclimate/coverage-letter/serverlize/serverlize.svg?longCache=true&style=for-the-badge
-[link-coverage]: https://codeclimate.com/github/serverlize/serverlize
+[icon-coverage]: https://img.shields.io/codecov/c/github/serverlize/serverlize/develop.svg?longCache=true&style=for-the-badge
+[link-coverage]: https://codecov.io/gh/serverlize/serverlize
+
 [icon-jest]: https://img.shields.io/badge/tested_with-jest-99424f.svg?longCache=true&style=for-the-badge
 [link-jest]: https://jestjs.io/
 
