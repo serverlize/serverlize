@@ -41,14 +41,14 @@ best-of-breed tooling with an intuitive, Rails-like development workflow.
 [icon-coverage]: https://img.shields.io/codeclimate/coverage-letter/serverlize/serverlize.svg?longCache=true&style=for-the-badge
 [link-coverage]: https://codeclimate.com/github/serverlize/serverlize
 [icon-jest]: https://img.shields.io/badge/tested_with-jest-99424f.svg?longCache=true&style=for-the-badge
-[link-jest]: https://github.com/facebook/jest
+[link-jest]: https://jestjs.io/
 
 [icon-commitizen]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?longCache=true&style=for-the-badge
 [link-commitizen]: http://commitizen.github.io/cz-cli/
 [icon-semantic-release]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?longCache=true&style=for-the-badge
 [link-semantic-release]: https://semantic-release.gitbooks.io/semantic-release/
 [icon-prettier]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?longCache=true&style=for-the-badge
-[link-prettier]: https://github.com/prettier/prettier
+[link-prettier]: https://prettier.io/
 [icon-lerna]: https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg?longCache=true&style=for-the-badge
 [link-lerna]: https://lernajs.io/
 
