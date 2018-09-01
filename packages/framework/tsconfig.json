@@ -6,5 +6,12 @@
   },
   "include": [
     "src"
+  ],
+  "references": [
+    { "path": "../cdk" },
+    { "path": "../cli" },
+    { "path": "../framework" },
+    { "path": "../lambda" },
+    { "path": "../support" }
   ]
 }
