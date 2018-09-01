@@ -17,13 +17,12 @@ const TABLE_OPTIONS = {
 };
 
 describe('Table', () => {
-
   it('should throw an error if no table name is specified', () => {
     expect(() => {
       return new Table({
         ...TABLE_OPTIONS,
         name: '',
-      })
+      });
     }).toThrowError('No table name specified');
   });
 
@@ -44,5 +43,4 @@ describe('Table', () => {
     const table = new Table(TABLE_OPTIONS);
     expect(table.indexes).toHaveLength(1);
   });
-
 });

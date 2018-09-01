@@ -7,37 +7,37 @@ export default interface AdapterInterface {
    * Returns the attributes of one or more items from one or more tables by delegating to AWS.DynamoDB.batchGetItem().
    */
   batchGet(
-    params: DocumentClient.BatchGetItemInput
+    params: DocumentClient.BatchGetItemInput,
   ): Promise<DocumentClient.BatchGetItemOutput>;
   /**
    * Puts or deletes multiple items in one or more tables by delegating to AWS.DynamoDB.batchWriteItem().
    */
   batchWrite(
-    params: DocumentClient.BatchWriteItemInput
+    params: DocumentClient.BatchWriteItemInput,
   ): Promise<DocumentClient.BatchWriteItemOutput>;
   /**
    * Deletes a single item in a table by primary key by delegating to AWS.DynamoDB.deleteItem().
    */
   delete(
-    params: DocumentClient.DeleteItemInput
+    params: DocumentClient.DeleteItemInput,
   ): Promise<DocumentClient.DeleteItemOutput>;
   /**
    * Returns a set of attributes for the item with the given primary key by delegating to AWS.DynamoDB.getItem().
    */
   get(
-    params: DocumentClient.GetItemInput
+    params: DocumentClient.GetItemInput,
   ): Promise<DocumentClient.GetItemOutput>;
   /**
    * Creates a new item, or replaces an old item with a new item by delegating to AWS.DynamoDB.putItem().
    */
   put(
-    params: DocumentClient.PutItemInput
+    params: DocumentClient.PutItemInput,
   ): Promise<DocumentClient.PutItemOutput>;
   /**
    * Edits an existing item's attributes, or adds a new item to the table if it does not already exist by delegating to AWS.DynamoDB.updateItem().
    */
   update(
-    params: DocumentClient.UpdateItemInput
+    params: DocumentClient.UpdateItemInput,
   ): Promise<DocumentClient.UpdateItemOutput>;
   /**
    * Directly access items from a table by primary key or a secondary index.

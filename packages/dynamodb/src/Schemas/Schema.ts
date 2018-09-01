@@ -9,7 +9,6 @@ export interface SchemaOptions {
 }
 
 export default class Schema implements SchemaInterface {
-
   attributes: SchemaAttribute[];
 
   constructor(options: SchemaOptions) {
@@ -21,10 +20,9 @@ export default class Schema implements SchemaInterface {
   generateCFN = () => {
     // return new DynamoDB.Table({
     // });
-  }
+  };
 
   validate = (item: any) => {
     return !!item;
-  }
-
+  };
 }

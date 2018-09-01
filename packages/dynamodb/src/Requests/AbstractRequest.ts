@@ -50,7 +50,7 @@ export default abstract class AbstractRequest {
 
   public filter = (
     filters: AbstractExpression<any> | AbstractExpression<any>[],
-    options?: FilterOptions
+    options?: FilterOptions,
   ) => {
     let filterList: AbstractExpression<any>[] = [];
     if (filters instanceof AbstractExpression) {
@@ -79,7 +79,7 @@ export default abstract class AbstractRequest {
                 ...request[property],
               };
             }
-          }
+          },
         );
 
         return {
@@ -87,7 +87,7 @@ export default abstract class AbstractRequest {
           ...request,
         };
       },
-      {} as Partial<Input>
+      {} as Partial<Input>,
     );
   };
 

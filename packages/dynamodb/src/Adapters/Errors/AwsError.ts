@@ -3,7 +3,6 @@ import { AWSError } from 'aws-sdk';
 import BaseError from '../../Errors/BaseError';
 
 export default class AwsError extends BaseError {
-
   protected code: string;
 
   constructor(error: AWSError, ...params: any[]) {

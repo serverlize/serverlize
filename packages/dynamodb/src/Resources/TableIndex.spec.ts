@@ -8,7 +8,6 @@ const INDEX_OPTIONS = {
 };
 
 describe('TableIndex', () => {
-
   it('should parse throughput value', () => {
     const tableIndex = new TableIndex(INDEX_OPTIONS);
     expect(tableIndex.throughput).toEqual({ read: 1, write: 1 });
@@ -20,8 +19,9 @@ describe('TableIndex', () => {
       name: '',
     });
 
-    const expectedIndexName = `${INDEX_OPTIONS.hashKey}-${INDEX_OPTIONS.rangeKey}-Index`;
+    const expectedIndexName = `${INDEX_OPTIONS.hashKey}-${
+      INDEX_OPTIONS.rangeKey
+    }-Index`;
     expect(tableIndex.name).toEqual(expectedIndexName);
   });
-
 });

@@ -18,7 +18,7 @@ export interface CreateModelOptions extends SchemaOptions {
 
 export default class DB {
   protected static adapter: AdapterInterface = new DynamoDBAdapter(
-    new DynamoDB.DocumentClient()
+    new DynamoDB.DocumentClient(),
   );
   // protected static client: DynamoDB.DocumentClient = new DynamoDB.DocumentClient();
   protected static models: { [key: string]: typeof Model } = {};
@@ -32,7 +32,7 @@ export default class DB {
   };
 
   static createModel = <D extends DataSchema, K extends KeySchema>(
-    modelOptions: CreateModelOptions
+    modelOptions: CreateModelOptions,
   ) => {
     const hashKeyAttribute = find(modelOptions.attributes, ['hashKey', true]);
     const rangeKeyAttribute = find(modelOptions.attributes, ['rangeKey', true]);
@@ -49,14 +49,14 @@ export default class DB {
 
     DB.models[tableOptions.name] = DB.compileModel<D, K>(
       schemaOptions,
-      tableOptions
+      tableOptions,
     ) as typeof Model;
     return DB.models[tableOptions.name];
   };
 
   private static compileModel = <D extends DataSchema, K extends KeySchema>(
     schemaOptions: SchemaOptions,
-    tableOptions: TableOptions
+    tableOptions: TableOptions,
   ) => {
     const adapter = DB.adapter;
     const schema = new Schema(schemaOptions);

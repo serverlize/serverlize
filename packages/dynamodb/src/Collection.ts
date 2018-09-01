@@ -12,7 +12,7 @@ export default class Collection<D extends DataSchema, K extends KeySchema> {
   constructor(
     model: typeof Model,
     items: D[] | Model<D, K>[],
-    cursor?: Cursor
+    cursor?: Cursor,
   ) {
     this.model = model;
     this.items =
@@ -24,7 +24,7 @@ export default class Collection<D extends DataSchema, K extends KeySchema> {
   }
 
   private createModels = <D extends DataSchema, K extends KeySchema>(
-    items: D[]
+    items: D[],
   ) => {
     return items.map((item: D) => {
       return new this.model<D, K>(item);
@@ -63,7 +63,7 @@ export default class Collection<D extends DataSchema, K extends KeySchema> {
     return new Collection(
       this.model,
       this.items.merge(this.createModels(items)).all(),
-      cursor
+      cursor,
     );
   };
 

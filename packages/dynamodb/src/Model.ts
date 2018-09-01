@@ -186,7 +186,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    */
   static async batchPut<D extends DataSchema, K extends KeySchema>(
     items: D[],
-    options?: BatchPutOptions
+    options?: BatchPutOptions,
   ): Promise<any> {
     const requests: DynamoDB.DocumentClient.WriteRequest[] = items.map(
       (item: D) => {
@@ -195,7 +195,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
             Item: item,
           },
         };
-      }
+      },
     );
 
     await this.adapter.batchWrite({
@@ -215,7 +215,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    */
   static async batchGet<D extends DataSchema, K extends KeySchema>(
     keys: K[],
-    options?: BatchGetOptions
+    options?: BatchGetOptions,
   ): Promise<any> {
     const { Responses } = await this.adapter.batchGet({
       RequestItems: {
@@ -242,7 +242,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
    */
   static async batchDelete<D extends DataSchema, K extends KeySchema>(
     keys: K[],
-    options?: BatchDeleteOptions
+    options?: BatchDeleteOptions,
   ) {
     const requests: DynamoDB.DocumentClient.WriteRequest[] = keys.map(
       (key: K) => {
@@ -251,7 +251,7 @@ export default class Model<D extends DataSchema, K extends KeySchema> {
             Key: key,
           },
         };
-      }
+      },
     );
 
     await this.adapter.batchWrite({

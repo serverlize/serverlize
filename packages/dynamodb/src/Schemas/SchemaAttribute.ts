@@ -9,7 +9,6 @@ export interface SchemaAttributeOptions {
 }
 
 export default class SchemaAttribute {
-
   name: string;
   type: ScalarConstructor;
 
@@ -26,6 +25,5 @@ export default class SchemaAttribute {
 
   validate = (item: any) => {
     return !!item;
-  }
-
+  };
 }

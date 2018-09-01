@@ -1,7 +1,7 @@
 import ExpressionInterface from './ExpressionInterface';
 
-export default abstract class AbstractExpression<O> implements ExpressionInterface<O> {
-
+export default abstract class AbstractExpression<O>
+  implements ExpressionInterface<O> {
   protected attribute: string;
   protected operator: string;
   protected value: string;

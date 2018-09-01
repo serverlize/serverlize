@@ -29,49 +29,49 @@ export default class DynamoDB implements AdapterInterface {
   }
 
   batchGet = (
-    params: DocumentClient.BatchGetItemInput
+    params: DocumentClient.BatchGetItemInput,
   ): Promise<DocumentClient.BatchGetItemOutput> => {
     return this.execute('batchGet', params);
   };
 
   batchWrite = (
-    params: DocumentClient.BatchWriteItemInput
+    params: DocumentClient.BatchWriteItemInput,
   ): Promise<DocumentClient.BatchWriteItemOutput> => {
     return this.execute('batchWrite', params);
   };
 
   delete = (
-    params: DocumentClient.DeleteItemInput
+    params: DocumentClient.DeleteItemInput,
   ): Promise<DocumentClient.DeleteItemOutput> => {
     return this.execute('delete', params);
   };
 
   get = (
-    params: DocumentClient.GetItemInput
+    params: DocumentClient.GetItemInput,
   ): Promise<DocumentClient.GetItemOutput> => {
     return this.execute('get', params);
   };
 
   put = (
-    params: DocumentClient.PutItemInput
+    params: DocumentClient.PutItemInput,
   ): Promise<DocumentClient.PutItemOutput> => {
     return this.execute('put', params);
   };
 
   update = (
-    params: DocumentClient.UpdateItemInput
+    params: DocumentClient.UpdateItemInput,
   ): Promise<DocumentClient.UpdateItemOutput> => {
     return this.execute('update', params);
   };
 
   query = (
-    params: DocumentClient.QueryInput
+    params: DocumentClient.QueryInput,
   ): Promise<DocumentClient.QueryOutput> => {
     return this.execute('query', params);
   };
 
   scan = (
-    params: DocumentClient.ScanInput
+    params: DocumentClient.ScanInput,
   ): Promise<DocumentClient.ScanOutput> => {
     return this.execute('scan', params);
   };
