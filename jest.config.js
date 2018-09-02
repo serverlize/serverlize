@@ -1,6 +1,9 @@
+const preset = require('ts-jest').jestPreset;
+
 module.exports = {
-  "collectCoverage": true,
-  "coveragePathIgnorePatterns": [
+  preset: 'ts-jest',
+  collectCoverage: true,
+  coveragePathIgnorePatterns: [
     "/node_modules/",
     "/tests/",
     "/__fixtures__/"
@@ -13,20 +16,15 @@ module.exports = {
   //     "statements": 95
   //   }
   // },
-  "moduleDirectories": [
+  moduleDirectories: [
     "src",
     "node_modules"
   ],
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js"
+  testMatch: [
+    ...preset.testMatch,
+    '**/?(*.)+(spec|integ|test).ts?(x)',
   ],
-  "transform": {
-    ".(ts|tsx)": "ts-jest"
-  },
-  "transformIgnorePatterns": [
+  transformIgnorePatterns: [
     "<rootDir>/node_modules/"
   ],
-  "testRegex": ".*\\.(spec|integ)\\.(ts|tsx|js)$"
 };
