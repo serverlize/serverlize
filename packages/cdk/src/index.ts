@@ -1,1 +1,1 @@
-export * from './deploy.spec';
+export * from './Commands/Deploy';

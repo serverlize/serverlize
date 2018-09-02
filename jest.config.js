@@ -8,6 +8,7 @@ module.exports = {
     "/tests/",
     "/__fixtures__/"
   ],
+  // @TODO Uncomment the following lines once test coverage has reached an acceptable threshold
   // "coverageThreshold": {
   //   "global": {
   //     "branches": 90,
