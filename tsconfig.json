@@ -31,8 +31,5 @@
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
-  ],
-  "plugins": [
-    { "name": "typescript-workspace-plugin" }
   ]
 }

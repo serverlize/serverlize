@@ -35,8 +35,7 @@
     "husky": "^1.0.0-rc.13",
     "lerna": "^3.0.1",
     "ts-node": "^7.0.0",
-    "typescript": "^3.0.1",
-    "typescript-workspace-plugin": "^1.0.5"
+    "typescript": "^3.0.1"
   },
   "workspaces": {
     "packages": [
@@ -47,11 +46,6 @@
       "**/tslint-config-esg",
       "**/tslint-config-prettier",
       "**/tslint-eslint-rules"
-    ]
-  },
-  "workspace-sources": {
-    "@serverlize/*": [
-      "packages/*/src"
     ]
   },
   "greenkeeper": {
