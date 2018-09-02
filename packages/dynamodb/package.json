@@ -71,6 +71,7 @@
     "ts-jest": "^23.1.2",
     "ts-node": "^7.0.0",
     "tsconfig-paths": "^3.4.2",
+    "tslib": "^1.9.3",
     "tslint": "^5.8.0",
     "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
     "tslint-config-prettier": "^1.1.0",

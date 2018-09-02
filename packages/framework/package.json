@@ -49,6 +49,7 @@
     "prettier": "^1.13.7",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.1.2",
+    "tslib": "^1.9.3",
     "tslint": "^5.9.1",
     "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
     "tslint-config-prettier": "^1.14.0",

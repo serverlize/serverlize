@@ -2,11 +2,13 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./packages",
+    "composite": true,
     "declaration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
     "lib": [
       "es2015",
       "es2016",
