@@ -1,6 +1,6 @@
 {
   "name": "serverlize",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Serverlize - Supercharge your Serverless development experience!",
   "license": "MIT",
   "private": true,
@@ -27,15 +27,15 @@
     "test": "lerna run --concurrency 10 --stream test:prod && codecov"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
-    "@commitlint/prompt": "^7.0.0",
-    "codecov": "^3.0.4",
-    "commitizen": "^2.10.1",
+    "@commitlint/cli": "^7",
+    "@commitlint/config-conventional": "^7",
+    "@commitlint/prompt": "^7",
+    "codecov": "^3",
+    "commitizen": "^2",
     "husky": "^1.0.0-rc.13",
-    "lerna": "^3.0.1",
-    "ts-node": "^7.0.0",
-    "typescript": "^3.0.1"
+    "lerna": "^3",
+    "ts-node": "^7",
+    "typescript": "^3"
   },
   "workspaces": {
     "packages": [
