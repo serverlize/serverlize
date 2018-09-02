@@ -1,7 +1,7 @@
 import middy from '@middy/core';
 
-declare namespace Serverlize {
-  namespace Lambda {
+export namespace Serverlize {
+  export namespace Lambda {
     // Re-export Middleware types from `@middy/core`
     export type Middleware = middy.IMiddyMiddlewareObject;
     export type MiddlewareFunction = middy.IMiddyMiddlewareFunction;

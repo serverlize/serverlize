@@ -11,4 +11,8 @@ const deploy = async (appPath: string) => {
   execa('cdk', options).stdout.pipe(process.stdout);
 };
 
-export default deploy;
+export default class Deploy {
+  run() {
+    return;
+  }
+}

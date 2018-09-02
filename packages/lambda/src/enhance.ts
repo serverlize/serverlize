@@ -2,7 +2,14 @@ import middy from '@middy/core';
 
 import { Serverlize } from './types';
 
-export function enhance(
+/**
+ * Enhances a Lambda function by wrapping it with the `middy` handler and
+ * any provided middleware.
+ * @param {Serverlize.Lambda.Handler} handler
+ * @param {Serverlize.Lambda.Middleware[]} middlewareToApply
+ * @returns {any}
+ */
+export default function enhance(
   handler: Serverlize.Lambda.Handler,
   middlewareToApply: Serverlize.Lambda.Middleware[] = [],
 ) {
@@ -15,22 +22,4 @@ export function enhance(
     },
     middy(handler),
   );
-}
-
-export function success(body: {}, statusCode = 200) {
-  return {
-    body: JSON.stringify(body),
-    statusCode,
-  };
-}
-
-export function failure(error: Error, statusCode = 500) {
-  return {
-    body: JSON.stringify({
-      message: error.message,
-      stack: error.stack,
-      type: error.constructor.name,
-    }),
-    statusCode,
-  };
 }
