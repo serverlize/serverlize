@@ -16,9 +16,7 @@ describe('TypeScriptLoader', () => {
       const result = await loader(path.resolve(FIXTURES_PATH, 'error'));
     } catch (error) {
       expect(error).toBeInstanceOf(TypeScriptCompileError);
-      expect(error.toObject().message).toMatch(
-        'Failed to compile TypeScript: Expression expected',
-      );
+      expect(error.toObject().message).toMatch('Failed to compile TypeScript');
     }
   });
 });
