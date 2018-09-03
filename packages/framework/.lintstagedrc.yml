@@ -1,7 +1,8 @@
 linters:
   package.json:
     - "npmPkgJsonLint"
-  "{src,test}/**/*.ts":
+  "src/**/*.ts":
     - "tslint --fix"
     - "prettier --write"
     - "git add"
+    - "jest --bail --findRelatedTests"
