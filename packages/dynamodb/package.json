@@ -39,7 +39,7 @@
     "ts": "$(yarn bin)/ts-node -r tsconfig-paths/register"
   },
   "peerDependencies": {
-    "aws-sdk": "^2",
+    "aws-sdk": ">=2",
     "collect.js": ">=4",
     "lodash.find": ">=4"
   },
