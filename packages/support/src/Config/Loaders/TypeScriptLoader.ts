@@ -2,7 +2,7 @@ import { AsyncLoader } from 'cosmiconfig';
 import get from 'lodash.get';
 import TypeScriptCompileError from '../Errors/TypeScriptCompileError';
 
-const loader: AsyncLoader = async (filePath, content = '') => {
+const loader: AsyncLoader = async (filePath) => {
   try {
     require('ts-node/register');
     const result = require(filePath);

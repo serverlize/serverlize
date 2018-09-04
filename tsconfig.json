@@ -17,6 +17,10 @@
     ],
     "module":"commonjs",
     "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "paths": {
       "@serverlize/*": ["./*/src"]
     },
@@ -30,6 +34,7 @@
   },
   "exclude": [
     "node_modules",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/__fixtures__/*.*"
   ]
 }

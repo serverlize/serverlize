@@ -13,6 +13,6 @@ const deploy = async (appPath: string) => {
 
 export default class Deploy {
   run() {
-    return;
+    deploy('asd');
   }
 }
