@@ -65,9 +65,9 @@ export default Lambda.enhance(handler, middleware);
 A middleware object conforms to the `Serverlize.Lambda.Middleware` type, which
 requires one of the following to be defined:
 
- - `before`: This function is called before the handler function is invoked
- - `after`: This function is called after the handler function is invoked
- - `onError`: This function is called if the handler function throws an error
+- `before`: This function is called before the handler function is invoked
+- `after`: This function is called after the handler function is invoked
+- `onError`: This function is called if the handler function throws an error
 
 All three events conform to the `Serverlize.Lambda.MiddlewareFunction` type
 

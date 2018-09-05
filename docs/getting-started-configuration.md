@@ -3,22 +3,32 @@ id: getting-started-configuration
 title: Configuration
 ---
 
+Serverlize uses [`cosmiconfig`][link-cosmiconfig] to load its' configuration
+file. This means the configuration file can be in a variety of formats, 
+whichever suits the team best. However, we highly recommend leaving it as
+a TypeScript file, this allows type-hinting on the configuration which can
+prevent unintended runtime behaviour.
+
 ```typescript
+import { Lambda } from '@serverlize/framework';
+
 export default {
   appName: '', /* Optional, uses name from package.json first */
 
   plugins: [], /* Optional, must be the same name as on NPM */
 
   deploy: {
-    canary: {
-      enabled: true
-    },
+    type: Lambda.Deploy.Canary.10Percent5Minutes,
   },
 
-  dynamodb: {
-    autoscale: {
+  apigateway: {
+
+  },
+
+  dynamoDB: {
+    autoScale: {
       enabled: true,
-      capacity: {
+      threshold: {
         minimum: 5,
         maximum: 500,
         usage: 0.75,
@@ -33,6 +43,7 @@ export default {
     },
   },
 };
+
 ```
 
 ## `appName`
@@ -93,10 +104,11 @@ as [CodeDeploy][link-codedeploy-configurations]:
 When set to `true`, enables autoscaling for all DynamoDB resources in the
 project.
 
-#### `dynamodb.autoscale.capacity`
+#### `dynamodb.autoscale.threshold`
 
 **Default:** `true`
 
 ## `lambda`
 
+[link-cosmiconfig]: https://github.com/davidtheclark/cosmiconfig 
 [link-canary-deployments]: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-lambda

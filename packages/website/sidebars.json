@@ -18,6 +18,7 @@
       "cli-custom"
     ],
     "Lambda": [
+      "lambda-define",
       "lambda-logging",
       "lambda-middleware",
       "lambda-security"

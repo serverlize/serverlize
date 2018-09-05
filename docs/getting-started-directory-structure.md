@@ -5,4 +5,14 @@ title: Directory Structure
 
 Once inside the project, you should have a folder structure as follows:
 
-> @TODO Paste output of `tree` command
+```
+├── app
+│   └── Functions
+│       └── HelloWorld.ts
+├── jest.config.js
+├── package.json
+├── prettier.config.js
+├── tsconfig.json
+├── tsconfig.test.json
+└── tslint.json
+```

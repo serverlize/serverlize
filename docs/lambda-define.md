@@ -10,11 +10,11 @@ through the CLI:
 $ slz function create ListPets --type http
 ```
 
-Under `app/functions/`, there should now be a new file called `ListPets.ts`. 
+Under `app/functions/`, there should now be a new file called `ListPets.ts`.
 Inside it should look like the following:
 
 ```typescript
-import { Lambda } from '@serverlize/framework'
+import { Lambda } from '@serverlize/framework';
 
 const handler: Lambda.APIGatewayProxyHandler = async (event) => {
   return {

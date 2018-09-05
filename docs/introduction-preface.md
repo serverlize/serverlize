@@ -17,7 +17,11 @@ and have first-hand experienced many of the pain points in developing truly
 With that said, we are witnesses of the advantages offered by such architectures
 and ...
 
+Built using TypeScript because we value reliability and type safety in our code.
+
 ## Guiding principles
+
+> Unapologetically AWS-only, TypeScript-first
 
 > Make it easy to do the right thing
 
@@ -49,8 +53,6 @@ Reliability is somewhat inherent to the Serverless paradigm, in that
 
 ### Cost Optimization
 
-> @TODO Could we hook into the pricing API and try and calculate a rough usage price?
-
 ---
 
 ## Why we built Serverlize
@@ -59,7 +61,7 @@ Reliability is somewhat inherent to the Serverless paradigm, in that
 
 > Aimed at increasing developer productivity
 
-> We wanted to build a framework that allows us to quickly set up projects that are set up for scalability from day one.
+> We wanted to build a framework that allows us to quickly set up projects that are set up for scalability from the get-go.
 
 As a small team, we didn't want to spend time reinventing the wheel for each
 project. We wanted a solution that would maximise our productivity whilst also
