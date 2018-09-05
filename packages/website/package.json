@@ -25,7 +25,7 @@
     "examples": "docusaurus-examples",
     "prestart": "node scripts/prepareDocs",
     "start": "docusaurus-start",
-    "build": "docusaurus-build",
+    "build:docs": "docusaurus-build",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",

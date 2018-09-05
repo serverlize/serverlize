@@ -32,7 +32,7 @@
     "build:tsc": "tsc --module commonjs",
     "build:rollup": "rollup -c",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
-    "build": "yarn build:tsc && yarn build:rollup && yarn build:docs",
+    "build": "yarn build:tsc && yarn build:rollup",
     "start": "rollup -c -w",
     "test": "jest",
     "test:prod": "yarn test --coverage --no-cache",
