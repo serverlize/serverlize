@@ -1,13 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "dist/types",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "outDir": "dist/lib"
+    "declarationDir": "./dist/types",
+    "outDir": "./dist/lib",
+    "rootDir": "./src"
   },
   "include": [
-    "src"
+    "./src"
   ],
   "references": [
     { "path": "../cdk" },

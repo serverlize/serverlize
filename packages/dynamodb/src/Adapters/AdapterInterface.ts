@@ -12,34 +12,34 @@ export default interface AdapterInterface {
   /**
    * Returns the attributes of one or more items from a table.
    */
-  batchGet<D, K>(
+  batchGet(
     models: Model[],
     options?: BatchGetOptions,
   ): AsyncIterableIterator<{}>;
   /**
    * Puts or overwrites multiple items in a table.
    */
-  batchPut<D, K>(models: Model[]): AsyncIterableIterator<{}>;
+  batchPut(models: Model[]): AsyncIterableIterator<{}>;
   /**
    * Deletes multiple items in a table.
    */
-  batchDelete<D, K>(models: Model[]): AsyncIterableIterator<{}>;
+  batchDelete(models: Model[]): AsyncIterableIterator<{}>;
   /**
    * Deletes a single item in a table by primary key.
    */
-  delete<D, K>(model: Model): Promise<Model | undefined>;
+  delete(model: Model): Promise<Model | undefined>;
   /**
    * Returns a set of attributes for the item with the given primary key.
    */
-  get<D, K>(model: Model, options?: GetOptions): Promise<Model>;
+  get(model: Model, options?: GetOptions): Promise<Model>;
   /**
    * Creates a new item, or replaces an old item with a new item.
    */
-  put<D, K>(model: Model): Promise<Model>;
+  put(model: Model): Promise<Model>;
   /**
    * Edits an existing item's attributes, or adds a new item to the table if it does not already exist.
    */
-  update<D, K>(model: Model): Promise<Model>;
+  update(model: Model): Promise<Model>;
   /**
    * Directly access items from a table by primary key or a secondary index.
    */

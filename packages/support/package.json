@@ -3,9 +3,9 @@
   "description": "Serverlize Support modules",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "dist/lambda.umd.js",
-  "module": "dist/lambda.es5.js",
-  "typings": "dist/types/lambda.d.ts",
+  "main": "dist/support.umd.js",
+  "module": "dist/support.es5.js",
+  "typings": "dist/types/support.d.ts",
   "files": [
     "dist"
   ],

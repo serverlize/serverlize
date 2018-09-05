@@ -1,3 +1,5 @@
+import { BatchGetOptions, GetOptions } from '@aws/dynamodb-data-mapper';
+
 import AdapterInterface from './Adapters/AdapterInterface';
 import { DataSchema, KeySchema } from './types';
 
@@ -53,7 +55,7 @@ export default class Model<D extends DataSchema = D, K extends KeySchema = K> {
    * @param {KeySchema} key
    * @returns {Promise<Model>}
    */
-  static async get(key: KeySchema, options): Promise<Model> {
+  static async get(key: KeySchema, options: GetOptions): Promise<Model> {
     return this.adapter.get(this.hydrateModel(key), options);
   }
 
@@ -94,7 +96,10 @@ export default class Model<D extends DataSchema = D, K extends KeySchema = K> {
    * @param {KeySchema[]} keys
    * @returns {Promise<Model[]>}
    */
-  static async batchGet(keys: KeySchema[], options): Promise<any> {
+  static async batchGet(
+    keys: KeySchema[],
+    options: BatchGetOptions,
+  ): Promise<any> {
     return this.adapter.batchGet(keys.map(this.hydrateModel), options);
   }
 

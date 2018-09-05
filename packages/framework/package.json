@@ -2,8 +2,9 @@
   "name": "@serverlize/framework",
   "description": "Serverlize Framework package",
   "version": "0.0.0",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/framework.umd.js",
+  "module": "dist/framework.es5.js",
+  "typings": "dist/types/framework.d.ts",
   "license": "MIT",
   "author": {
     "name": "Serverlize",

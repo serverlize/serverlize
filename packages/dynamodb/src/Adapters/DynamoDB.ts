@@ -17,7 +17,7 @@ export default class DynamoDB implements AdapterInterface {
   }
 
   batchGet = (models: Model[], options: BatchGetOptions) => {
-    return this.mapper.batchGet(models);
+    return this.mapper.batchGet(models, options);
   };
 
   batchPut = (models: Model[]) => {
@@ -33,7 +33,7 @@ export default class DynamoDB implements AdapterInterface {
   };
 
   get = (model: Model, options: GetOptions) => {
-    return this.mapper.get(model);
+    return this.mapper.get(model, options);
   };
 
   put = (model: Model) => {

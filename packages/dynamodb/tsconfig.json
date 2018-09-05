@@ -1,11 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "dist/types",
-    "outDir": "dist/lib"
+    "declarationDir": "./dist/types",
+    "outDir": "./dist/lib",
+    "rootDir": "./src"
   },
   "include": [
-    "src"
+    "./src"
   ],
   "references": [
     { "path": "../cdk" },

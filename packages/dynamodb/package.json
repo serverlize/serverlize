@@ -3,9 +3,9 @@
   "description": "Serverlize Database modules",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "dist/db.umd.js",
-  "module": "dist/db.es5.js",
-  "typings": "dist/types/db.d.ts",
+  "main": "dist/dynamodb.umd.js",
+  "module": "dist/dynamodb.es5.js",
+  "typings": "dist/types/dynamodb.d.ts",
   "files": [
     "dist"
   ],
