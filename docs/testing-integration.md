@@ -26,6 +26,4 @@ tests.
 
 Serverlize projects use [Jest][link-jest] for both unit and integration tests.
 
-
-
 [link-jest]: https://jestjs.io/

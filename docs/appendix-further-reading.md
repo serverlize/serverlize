@@ -17,6 +17,7 @@ title: Further Reading
 ## Inspiration
 
 ### AWS
+
 - [`cloudform`](https://github.com/bright/cloudform)
 
 ### Monorepo
@@ -27,9 +28,6 @@ title: Further Reading
 - [`lint-staged-multi-pkg`](https://github.com/sudo-suhas/lint-staged-multi-pkg)
 - [`serverless-mono-example`](https://github.com/tommedema/serverless-mono-example)
 - [`typescript-workspace-plugin`](https://github.com/spion/typescript-workspace-plugin)
-
-### TypeScript
-- [`typescript-library-starter`](https://github.com/alexjoverm/typescript-library-starter)
 
 ## Libraries
 

@@ -44,7 +44,6 @@ This involves topics such as
 We want our applications to protect data as well as our systems. This involves
 things such as encrypting credentials and data.
 
-
 ### Reliability
 
 Reliability is somewhat inherent to the Serverless paradigm, in that
@@ -61,7 +60,8 @@ Reliability is somewhat inherent to the Serverless paradigm, in that
 
 > Aimed at increasing developer productivity
 
-> We wanted to build a framework that allows us to quickly set up projects that are set up for scalability from the get-go.
+> We wanted to build a framework that allows us to quickly set up projects that
+are set up for scalability from the get-go.
 
 As a small team, we didn't want to spend time reinventing the wheel for each
 project. We wanted a solution that would maximise our productivity whilst also
