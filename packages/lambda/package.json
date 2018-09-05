@@ -28,7 +28,7 @@
   "scripts": {
     "precommit": "$(yarn bin)/lint-staged",
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'src/**/*.spec.ts'",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf coverage/ dist/",
     "build:tsc": "tsc --module commonjs",
     "build:rollup": "rollup -c",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
@@ -41,8 +41,7 @@
     "@middy/core": ">=1.0.0-alpha.11",
     "@serverlize/cdk": ">=0.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@aws-cdk/cdk": "^0.8.2",
     "@middy/core": "^1.0.0-alpha.11",

@@ -32,7 +32,7 @@
   "scripts": {
     "precommit": "$(yarn bin)/lint-staged",
     "lint": "tslint -p tsconfig.json -t codeFrame 'src/**/*.ts' -e 'tests/**/*.spec.ts'",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf coverage/ dist/",
     "build:tsc": "tsc",
     "build:docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
     "build": "yarn build:tsc && yarn build:docs",
