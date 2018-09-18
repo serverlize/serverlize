@@ -36,7 +36,7 @@ compiled
 
 # Outputs
 dist
-**/docs
+packages/**/docs
 
 # Dependency directories
 node_modules

@@ -21,6 +21,7 @@
       "lambda-define",
       "lambda-logging",
       "lambda-middleware",
+      "lambda-performance",
       "lambda-security"
     ],
     "DynamoDB": [

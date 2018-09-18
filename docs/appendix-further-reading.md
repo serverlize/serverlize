@@ -19,6 +19,9 @@ title: Further Reading
 ### AWS
 
 - [`cloudform`](https://github.com/bright/cloudform)
+- [Serverless Framework](https://serverless.com/)
+- [Rails](https://rubyonrails.org/)
+- [Dynamoose](https://dynamoosejs.com/)
 
 ### Monorepo
 

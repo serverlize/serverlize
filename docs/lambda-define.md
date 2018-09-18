@@ -15,13 +15,25 @@ Inside it should look like the following:
 
 ```typescript
 import { Lambda } from '@serverlize/framework';
+import { function } from '@serverlize/lambda';
 
-const handler: Lambda.APIGatewayProxyHandler = async (event) => {
-  return {
-    event,
-    message: 'Hello world from the Serverlize Framework!',
-  };
-};
+@function()
+class ListPets extends Lambda {
+  middleware: [ 'json' ];
 
-export default handler;
+  handler = async (event: any) => {
+    return {
+      body: JSON.stringify({
+        event,
+        message: 'Hello world from the Serverlize Framework!',
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      statusCode: 200,
+    };
+  }
+}
+
+export default (new ListPets).handler;
 ```
