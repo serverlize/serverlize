@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@aws-cdk/cdk@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cdk/-/cdk-0.10.0.tgz#9cfed32410d5c9283814d7102d26cc3db2b444d8"
+  dependencies:
+    "@aws-cdk/cx-api" "^0.10.0"
+    js-base64 "^2.4.5"
+    json-diff "^0.3.1"
+
 "@aws-cdk/cdk@^0.8.2":
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/cdk/-/cdk-0.8.2.tgz#689a206c72105e5f0e305836040033e47a97e3b8"
@@ -17,6 +25,10 @@
     "@aws-cdk/cx-api" "^0.9.2"
     js-base64 "^2.4.5"
     json-diff "^0.3.1"
+
+"@aws-cdk/cx-api@^0.10.0":
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cx-api/-/cx-api-0.10.0.tgz#97b0866159ed28cb391e6f2d6cf553a0432aa0f2"
 
 "@aws-cdk/cx-api@^0.8.2":
   version "0.8.2"
@@ -1306,6 +1318,20 @@ autoprefixer@^9.1.5:
 aws-sdk@^2:
   version "2.307.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.307.0.tgz#53a5906d36061d62e7b2ceb243920c7ef8feac97"
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.1.0"
+    xml2js "0.4.19"
+
+aws-sdk@^2.316.0:
+  version "2.325.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.325.0.tgz#bea29d4d1f4fafded3021b797e879104bb7664a7"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -8626,6 +8652,13 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.2.0:
 rollup@^0.65.0:
   version "0.65.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.65.0.tgz#280db1252169b68fc3043028346b337dde453fba"
+  dependencies:
+    "@types/estree" "0.0.39"
+    "@types/node" "*"
+
+rollup@^0.66.0:
+  version "0.66.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.66.2.tgz#77acdb9f4093f5f035ce75480577c40a81ea7999"
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "*"
