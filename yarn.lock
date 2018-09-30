@@ -10,9 +10,21 @@
     js-base64 "^2.4.5"
     json-diff "^0.3.1"
 
+"@aws-cdk/cdk@^0.9.1":
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cdk/-/cdk-0.9.2.tgz#eceb2ff3f2c8b085e1c742049cae7ad547ca938e"
+  dependencies:
+    "@aws-cdk/cx-api" "^0.9.2"
+    js-base64 "^2.4.5"
+    json-diff "^0.3.1"
+
 "@aws-cdk/cx-api@^0.8.2":
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/cx-api/-/cx-api-0.8.2.tgz#73bb5ce9ef22f1b1f9eb894ce38f4ceb5da75987"
+
+"@aws-cdk/cx-api@^0.9.2":
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/cx-api/-/cx-api-0.9.2.tgz#981b39ce831ecb934bb3a9d1b846f2978d85b6f6"
 
 "@aws/dynamodb-auto-marshaller@^0.7.1":
   version "0.7.1"
@@ -1288,6 +1300,20 @@ autoprefixer@^6.3.1:
 aws-sdk@^2:
   version "2.307.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.307.0.tgz#53a5906d36061d62e7b2ceb243920c7ef8feac97"
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.1.0"
+    xml2js "0.4.19"
+
+aws-sdk@^2.316.0:
+  version "2.325.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.325.0.tgz#bea29d4d1f4fafded3021b797e879104bb7664a7"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -8438,6 +8464,13 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.2.0:
 rollup@^0.65.0:
   version "0.65.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.65.0.tgz#280db1252169b68fc3043028346b337dde453fba"
+  dependencies:
+    "@types/estree" "0.0.39"
+    "@types/node" "*"
+
+rollup@^0.66.0:
+  version "0.66.2"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.66.2.tgz#77acdb9f4093f5f035ce75480577c40a81ea7999"
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "*"
