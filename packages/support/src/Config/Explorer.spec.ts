@@ -2,6 +2,12 @@ import AdapterInterface from './Adapters/AdapterInterface';
 import PathNotFoundError from './Errors/PathNotFoundError';
 import Explorer from './Explorer';
 
+interface MockError extends Error {
+  code: string;
+  errno: number;
+  path: string;
+}
+
 class MockAdapter implements AdapterInterface {
   config: {};
 
@@ -13,7 +19,7 @@ class MockAdapter implements AdapterInterface {
 
   load = async (path: string) => {
     if (path === './error') {
-      const error = new Error('File not found');
+      const error = new Error('File not found') as MockError;
       error['code'] = 'ENOENT';
       error['errno'] = -2;
       error['path'] = '/';
@@ -52,7 +58,7 @@ describe('Explorer', () => {
 
   it('throws a `PathNotFoundError` error if the path is invalid', async () => {
     try {
-      const config = await loader.load('./error');
+      await loader.load('./error');
     } catch (error) {
       expect(error).toBeInstanceOf(PathNotFoundError);
     }
