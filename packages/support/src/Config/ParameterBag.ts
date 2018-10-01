@@ -1,10 +1,10 @@
 import get from 'lodash.get';
 import has from 'lodash.has';
 
-export default class ParameterBag {
-  config: {};
+export default class ParameterBag<T extends object> {
+  config: T;
 
-  constructor(config: {}) {
+  constructor(config: T) {
     this.config = config;
   }
 
@@ -16,7 +16,7 @@ export default class ParameterBag {
     return get(this.config, path, defaultValue);
   };
 
-  all = () => {
+  all = (): T => {
     return this.config;
   };
 }

@@ -1,10 +1,15 @@
 import ParameterBag from './ParameterBag';
 
+interface Config {
+  bar: string;
+  foo: string;
+}
+
 describe('ParameterBag', () => {
-  let config: ParameterBag;
+  let config: ParameterBag<Config>;
 
   beforeEach(() => {
-    config = new ParameterBag({
+    config = new ParameterBag<Config>({
       bar: 'baz',
       foo: 'bar',
     });
@@ -14,7 +19,8 @@ describe('ParameterBag', () => {
     expect(config).toBeInstanceOf(ParameterBag);
   });
 
-  it('checks if parameter exists', () => {
+  it('checks for parameter existence', () => {
+    expect(config.has('foo')).toEqual(true);
     expect(config.has('baz')).toEqual(false);
   });
 
