@@ -27,7 +27,7 @@
     "test": "lerna run --concurrency 10 --stream test:prod && codecov"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7",
+    "@commitlint/cli": "^7.5.1",
     "@commitlint/config-conventional": "^7",
     "@commitlint/prompt": "^7",
     "codecov": "^3",
