@@ -62,7 +62,7 @@
     "npm-package-json-lint": "^3",
     "prettier": "^1",
     "rimraf": "^2",
-    "rollup": "^0.66.0",
+    "rollup": "^1.2.0",
     "rollup-plugin-commonjs": "^9",
     "rollup-plugin-json": "^3",
     "rollup-plugin-node-resolve": "^3",
