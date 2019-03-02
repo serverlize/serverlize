@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.9",
-    "@types/node": "^10",
+    "@types/node": "^11.10.2",
     "@types/winston": "^2",
     "aws-sdk": "^2.358.0",
     "jest": "^23",
