@@ -36,7 +36,7 @@
     "test:prod": "yarn test --coverage --no-cache"
   },
   "dependencies": {
-    "@aws-cdk/cdk": "^0.17.0",
+    "@aws-cdk/cdk": "^0.26.0",
     "@middy/core": "^1.0.0-alpha.11",
     "@serverlize/cdk": "^0.0.0",
     "@serverlize/cli": "^0.0.0",
