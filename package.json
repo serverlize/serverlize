@@ -33,7 +33,7 @@
     "codecov": "^3",
     "commitizen": "^2",
     "husky": "^1",
-    "lerna": "^3",
+    "lerna": "^3.13.4",
     "ts-node": "^7",
     "typescript": "^3"
   },
