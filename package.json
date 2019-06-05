@@ -32,7 +32,7 @@
     "@commitlint/prompt": "^7",
     "codecov": "^3",
     "commitizen": "^2",
-    "husky": "^1",
+    "husky": "^2.4.0",
     "lerna": "^3",
     "ts-node": "^7",
     "typescript": "^3"
