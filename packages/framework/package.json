@@ -43,7 +43,7 @@
     "@serverlize/dynamodb": "^0.0.0",
     "@serverlize/lambda": "^0.0.0",
     "@serverlize/support": "^0.0.0",
-    "aws-sdk": "^2.358.0",
+    "aws-sdk": "^2.514.0",
     "collect.js": "^4",
     "cosmiconfig": "^5",
     "execa": "^1",
