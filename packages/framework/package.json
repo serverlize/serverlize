@@ -74,7 +74,7 @@
     "tslint": "^5",
     "tslint-config-esg": "github:EndemolShineGroup/tslint-config-esg",
     "tslint-config-prettier": "^1",
-    "typedoc": "^0.13.0",
+    "typedoc": "^0.15.1",
     "typescript": "^3",
     "winston": "^3"
   }
