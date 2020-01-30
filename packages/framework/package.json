@@ -59,7 +59,7 @@
     "aws-sdk": "^2.358.0",
     "jest": "^23",
     "lint-staged": "^8.0.4",
-    "npm-package-json-lint": "^3",
+    "npm-package-json-lint": "^4.5.1",
     "prettier": "^1",
     "rimraf": "^2",
     "rollup": "^0.66.0",
