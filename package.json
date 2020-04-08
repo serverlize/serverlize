@@ -31,7 +31,7 @@
     "@commitlint/config-conventional": "^7",
     "@commitlint/prompt": "^7",
     "codecov": "^3",
-    "commitizen": "^2",
+    "commitizen": "^4.0.4",
     "husky": "^1",
     "lerna": "^3",
     "ts-node": "^7",
